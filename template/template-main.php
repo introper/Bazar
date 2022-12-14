@@ -1,8 +1,8 @@
 <?php include("header.php") ?>
 <main role="main" class="main">
     <section class="main-section">
-        <div class="container">
 
+        <div class="container">
             <div class="side-panel">
                 <h2>Kategorie</h2>
                 <ul>
@@ -43,130 +43,118 @@
                 </ul>
             </div>
             <div class="content">
-                <div class="item">
+                <a href="" class="item">
                     <div class="img">
                         <img src="data/images/cz-jazyk.jpg" alt="" />
-                    </div>
-                    <div class="text">
-                        <h3>Český jazyk 1. ročník dadwad</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
-                        <div class="bottom">
-                            <span>123 kč</span>
-                            <a href="#" class="btn full-green">
-                                Zobrazit
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="data/images/cz-jazyk.jpg" alt="" />
+                        <div class="bg"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
                     </div>
 
                     <div class="text">
-                        <h3>Český jazyk 1. ročník adwadw</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
-                        <div class="bottom">
-                            <span>123 kč</span>
-                            <a href="#" class="btn full-orange">
-                                Zobrazit
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="data/images/cz-jazyk.jpg" alt="" />
-                    </div>
-                    <div class="text">
                         <h3>Český jazyk 1. ročník dadwad</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
-                        <div class="bottom">
-                            <span>123 kč</span>
-                            <a href="#" class="btn full-orange">
-                                Zobrazit
-                            </a>
-                        </div>
+                        <span>123 kč</span>
                     </div>
-                </div>
-                <div class="item">
+                </a>
+                <a href="" class="item">
                     <div class="img">
                         <img src="data/images/cz-jazyk.jpg" alt="" />
+                        <div class="bg"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
                     </div>
 
                     <div class="text">
-                        <h3>Český jazyk 1. ročník adwadw</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
-                        <div class="bottom">
-                            <span>123 kč</span>
-                            <a href="#" class="btn full-orange">
-                                Zobrazit
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="data/images/cz-jazyk.jpg" alt="" />
-                    </div>
-                    <div class="text">
                         <h3>Český jazyk 1. ročník dadwad</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
-                        <div class="bottom">
-                            <span>123 kč</span>
-                            <a href="#" class="btn full-orange">
-                                Zobrazit
-                            </a>
-                        </div>
+                        <span>123 kč</span>
                     </div>
-                </div>
-                <div class="item">
+                </a>
+                <a href="" class="item">
                     <div class="img">
                         <img src="data/images/cz-jazyk.jpg" alt="" />
+                        <div class="bg"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
                     </div>
 
                     <div class="text">
-                        <h3>Český jazyk 1. ročník adwadw</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
-                        <div class="bottom">
-                            <span>123 kč</span>
-                            <a href="#" class="btn full-orange">
-                                Zobrazit
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="img">
-                        <img src="data/images/cz-jazyk.jpg" alt="" />
-                    </div>
-                    <div class="text">
                         <h3>Český jazyk 1. ročník dadwad</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
-                        <div class="bottom">
-                            <span>123 kč</span>
-                            <a href="#" class="btn full-orange">
-                                Zobrazit
-                            </a>
-                        </div>
+                        <span>123 kč</span>
                     </div>
-                </div>
-                <div class="item">
+                </a>
+                <a href="" class="item">
                     <div class="img">
                         <img src="data/images/cz-jazyk.jpg" alt="" />
+                        <div class="bg"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
                     </div>
 
                     <div class="text">
-                        <h3>Český jazyk 1. ročník adwadw</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
-                        <div class="bottom">
-                            <span>123 kč</span>
-                            <a href="#" class="btn full-orange">
-                                Zobrazit
-                            </a>
-                        </div>
+                        <h3>Český jazyk 1. ročník dadwad</h3>
+                        <span>123 kč</span>
                     </div>
-                </div>
+                </a>
+                <a href="" class="item">
+                    <div class="img">
+                        <img src="data/images/cz-jazyk.jpg" alt="" />
+                        <div class="bg"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
+                    </div>
+
+                    <div class="text">
+                        <h3>Český jazyk 1. ročník dadwad</h3>
+                        <span>123 kč</span>
+                    </div>
+                </a>
+                <a href="" class="item">
+                    <div class="img">
+                        <img src="data/images/cz-jazyk.jpg" alt="" />
+                        <div class="bg"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
+                    </div>
+
+                    <div class="text">
+                        <h3>Český jazyk 1. ročník dadwad</h3>
+                        <span>123 kč</span>
+                    </div>
+                </a>
+                <a href="" class="item">
+                    <div class="img">
+                        <img src="data/images/cz-jazyk.jpg" alt="" />
+                        <div class="bg"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
+                    </div>
+
+                    <div class="text">
+                        <h3>Český jazyk 1. ročník dadwad</h3>
+                        <span>123 kč</span>
+                    </div>
+                </a>
+                <a href="" class="item">
+                    <div class="img">
+                        <img src="data/images/cz-jazyk.jpg" alt="" />
+                        <div class="bg"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
+                    </div>
+
+                    <div class="text">
+                        <h3>Český jazyk 1. ročník dadwad</h3>
+                        <span>123 kč</span>
+                    </div>
+                </a>
+                <a href="" class="item">
+                    <div class="img">
+                        <img src="data/images/cz-jazyk.jpg" alt="" />
+                        <div class="bg"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime est ut qui, possimus aut laudantium tenetur animi eius libero voluptatem repellat? Maiores, soluta? Quam sequi nesciunt consectetur numquam autem molestiae?</p>
+                    </div>
+
+                    <div class="text">
+                        <h3>Český jazyk 1. ročník dadwad</h3>
+                        <span>123 kč</span>
+                    </div>
+                </a>
+
+            </div>
+            <div class="pagination-content">
+
             </div>
         </div>
     </section>

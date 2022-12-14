@@ -23,8 +23,8 @@
         <div class="container">
             <div class="flex-div">
                 <a href="template-main.php" class="logo">
-                    <img src="data/images/logo-full.svg" alt="" />
-                    <img class="small" src="data/images/logo-small.svg" alt="" />
+                    <img src="data/images/logo-black.svg" alt="Nazdar Bazar" />
+                    <img class="small" src="data/images/logo-small-black.svg" alt="Nazdar Bazar" />
                 </a>
                 <div class="hamburger">
                     <div></div>

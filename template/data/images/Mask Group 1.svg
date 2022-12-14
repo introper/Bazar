@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1076" viewBox="0 0 1920 1076">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_14" data-name="Rectangle 14" width="1920" height="1076" transform="translate(372.138 1401.5)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_1" data-name="Mask Group 1" transform="translate(-372.138 -1401.5)" clip-path="url(#clip-path)">
+    <g id="Curve_Line_1_" data-name="Curve Line (1)" transform="translate(372.138 1401.5)">
+      <rect id="Rectangle_15" data-name="Rectangle 15" width="1921.597" height="1084.519" fill="#0e2a47"/>
+      <path id="Path_6" data-name="Path 6" d="M181.4,953.481c147.1-40.519,183.448-562.295,448.986-598.622S958.461,86.629,1079.378,81.586" transform="translate(899.684 305.322)" fill="none" stroke="rgba(170,173,255,0.58)" stroke-width="0.675"/>
+      <path id="Path_7" data-name="Path 7" d="M179.6,509.513c85.279-4.959,154.473-214.149,310.71-214.292s155.352,113.864,310.7,113.864,230.8-113.063,310.71-113.864" transform="translate(898.52 625.279)" fill="none" stroke="rgba(170,173,255,0.58)" stroke-width="0.675"/>
+      <path id="Path_8" data-name="Path 8" d="M215.726,835.689C331.188,807.83,362.6,414.341,576.388,384.509S837.641,135.627,937.057,129.453" transform="translate(1006.934 321.412)" fill="none" stroke="rgba(170,173,255,0.58)" stroke-width="0.675"/>
+      <path id="Path_9" data-name="Path 9" d="M428.591,788.187c99.744-45.057,97.39-429.529,274.544-474.274S899.584,93.472,977.684,86.185" transform="translate(1059.914 312.21)" fill="none" stroke="rgba(170,173,255,0.58)" stroke-width="0.675"/>
+      <path id="Path_10" data-name="Path 10" d="M124.509,556.433c90.917-9.843,155.313-277.052,315.224-277.643S597.345,392.654,754.957,392.654,989.171,279.575,1070.18,278.79" transform="translate(862.808 600.668)" fill="none" stroke="rgba(170,173,255,0.58)" stroke-width="0.675"/>
+    </g>
+  </g>
+</svg>
