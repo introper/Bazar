@@ -33,4 +33,25 @@ jQuery(document).ready(function ($) {
 
   $(document).ready(fixedHeader);
   $(window).scroll(fixedHeader);
+
+  $(document).on("click", ".add-item", function (e) {
+    e.preventDefault();
+    $(".modal-add").toggleClass("active");
+  });
+  $(document).on("click", ".modal-add .exit-block", function (e) {
+    e.preventDefault();
+    $(document).find(".modal-add").removeClass("active");
+  });
+
+  $(document).on("click", ".bg-modal", function (e) {
+    e.preventDefault();
+    $(document).find(".modal-add").removeClass("active");
+  });
+
+  $(document).keyup(function (e) {
+    if (e.key === "Escape") {
+      $(document).find(".modal-add").removeClass("active");
+    }
+  });
+
 });
