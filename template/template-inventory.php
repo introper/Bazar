@@ -8,7 +8,7 @@
             <div class="add">
                 <a href="" class="add-item">Přidat položku</a>
             </div>
-            <div class="modal-add">
+            <div class="modal add">
                 <div class="bg-modal">
 
                 </div>
@@ -21,10 +21,36 @@
                         </div>
                     </div>
 
-                    <form action="">
+                    <form action="" class="form-add">
                         <input type="text" />
-                        <input type="text" />
+                        <input type="number" />
                         <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </form>
+                </div>
+            </div>
+            <div class="modal edit">
+                <div class="bg-modal">
+
+                </div>
+
+                <div class="editables">
+                    <h3>Upravte položku</h3>
+                    <h4>Vygenerované jméno</h4>
+                    <div class="exit-block">
+                        <div class="exit">
+
+                        </div>
+                    </div>
+
+                    <form action="" class="form-edit">
+                        <label for="name">Upravit název</label>
+                        <input type="text" name="name"/> 
+                        <label for="price">Upravit cenu</label>
+                        <input type="number" name="price" />
+                        <label for="description">Upravit popisek</label>
+                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                    <button type="submit" class="btn full-green">Upravit</button>
+                    
                     </form>
                 </div>
             </div>
@@ -41,7 +67,7 @@
                         <span>123 kč</span>
 
                         <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit">Upravit</a>
+                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
                 <div href="" class="item">
@@ -56,7 +82,7 @@
                         <span>123 kč</span>
 
                         <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit">Upravit</a>
+                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
                 <div href="" class="item">
@@ -71,7 +97,7 @@
                         <span>123 kč</span>
 
                         <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit">Upravit</a>
+                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
                 <div href="" class="item">
@@ -86,7 +112,7 @@
                         <span>123 kč</span>
 
                         <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit">Upravit</a>
+                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
                 <div href="" class="item">
@@ -101,7 +127,7 @@
                         <span>123 kč</span>
 
                         <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit">Upravit</a>
+                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
                 <div href="" class="item">
@@ -116,7 +142,7 @@
                         <span>123 kč</span>
 
                         <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit">Upravit</a>
+                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
 

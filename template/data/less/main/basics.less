@@ -312,6 +312,11 @@ section {
     position: relative;
 }
 
+.error {
+    .font-roboto-regular();
+    color: @red-4;
+}
+
 .content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1114,7 +1119,7 @@ section {
             width: 37%;
             margin: 0 auto;
             display: grid;
-            grid-gap: 30px;
+            grid-gap: 5px;
             justify-items: center;
             align-items: center;
             border: 1px solid @grey-3;
@@ -1122,22 +1127,47 @@ section {
             background-color: @grey-1;
             padding: 40px;
 
-            input {
-                .font-roboto-regular();
-                font-size: 1.6rem;
-                line-height: 1em;
-                padding: 10px 20px 10px 20px;
-                border-radius: 6px;
-                border: 1px solid @grey-4;
-                background-color: @grey-4;
-                color: @black;
+            .wrapper {
                 width: 100%;
-                display: block;
-                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                min-height: 100px;
 
+                input {
+                    .font-roboto-regular();
+                    font-size: 1.6rem;
+                    line-height: 1em;
+                    padding: 10px 20px 10px 20px;
+                    border-radius: 6px;
+                    border: 1px solid @grey-4;
+                    background-color: @grey-4;
+                    color: @black;
+                    width: 100%;
+                    display: block;
+                    margin-bottom: 10px;
+
+                    &.error {
+
+                        color: @red-4;
+                        -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 0, 0, 0.5);
+                        box-shadow: 0px 0px 5px 2px rgba(255, 0, 0, 0.5);
+                    }
+
+                }
+
+                label {
+                    text-align: center;
+                }
+
+                .full-green {
+                    margin: 0 auto;
+                    width: 40%;
+                    padding: 15px 15px;
+                }
             }
 
-            .full-green {}
         }
     }
 
@@ -1209,7 +1239,7 @@ section {
             }
         }
 
-        .modal-add {
+        .modal {
             .t(0.3s);
             position: fixed;
             bottom: 0;
@@ -1220,11 +1250,6 @@ section {
             //display: none;
             visibility: hidden;
 
-            &.active {.t(0.3s);
-                //display: block;
-                visibility: visible;
-            }
-
             .bg-modal {
                 height: 100%;
                 width: 100%;
@@ -1233,61 +1258,166 @@ section {
                 position: absolute;
             }
 
-            .parameters {
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 800px;
-                height: 800px;
-                z-index: 10;
+            .exit-block {
+                height: 23px;
+                width: 23px;
+                right: 1%;
+                top: 1%;
                 position: absolute;
-                background-color: @white;
 
-                .exit-block {
-                    height: 23px;
-                    width: 23px;
-                    right: 1%;
-                    top: 1%;
-                    position: absolute;
+                .exit {
+                    height: 100%;
+                    width: 100%;
+                    display: block;
+                    cursor: pointer;
 
-                    .exit {
-                        height: 100%;
+
+                    &:before {
+                        top: 50%;
+                        margin-top: 0px;
+                        margin-left: -2.5px;
+                        transform: rotate(45deg) translateY(-50%);
+                    }
+
+                    &:after {
+
+                        top: 50%;
                         width: 100%;
+                        margin-top: 0px;
+                        margin-left: 0px;
+                        bottom: unset;
+                        transform: rotate(-45deg) translateY(-50%);
+                    }
+
+                    &:before,
+                    &:after {
+
+                        content: "";
+                        position: absolute;
                         display: block;
-                        cursor: pointer;
+                        width: 100%;
+                        height: 4px;
+                        background-color: @black;
+                        left: 0px;
+                    }
+                }
+            }
+
+            &.add {
+
+                &.active {
+                    .t(0.3s);
+                    //display: block;
+                    visibility: visible;
+                }
 
 
-                        &:before {
-                            top: 50%;
-                            margin-top: 0px;
-                            margin-left: -2.5px;
-                            transform: rotate(45deg) translateY(-50%);
+
+                .parameters {
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 800px;
+                    height: 800px;
+                    z-index: 10;
+                    position: absolute;
+                    background-color: @white;
+                    text-align: center;
+                    padding: 50px;
+
+                    h3 {
+                        color: @purple-3;
+
+                    }
+
+                    .form-add {}
+
+
+
+                }
+            }
+
+            &.edit {
+                &.active {
+                    .t(0.3s);
+                    //display: block;
+                    visibility: visible;
+                }
+
+                .editables {
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 800px;
+                    height: 800px;
+                    z-index: 10;
+                    position: absolute;
+                    background-color: @white;
+                    text-align: center;
+                    padding: 50px;
+
+                    h3 {
+                        color: @purple-3;
+
+                    }
+
+                    h4 {
+                        color: @purple-3;
+                    }
+
+                    .form-edit {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        flex-wrap: nowrap;
+                        width: 70%;
+                        margin: 0 auto;
+                        padding-top: 30px;
+
+                        input,
+                        textarea {
+                            .font-roboto-regular();
+                            font-size: 1.6rem;
+                            width: 100%;
+                            border: 1px solid @purple-3;
+                            margin: 0 0 20px 0;
+                            border-radius: 10px;
+                            padding: 10px;
+                            position: relative;
                         }
 
-                        &:after {
-                            
-                            top: 50%;
+                        label {
+                            .font-roboto-medium();
+                            font-size: 1.6rem;
+                            color: @purple-2;
+                            text-align: center;
                             width: 100%;
-                            margin-top: 0px;
-                            margin-left: 0px;
-                            bottom: unset;
-                            transform: rotate(-45deg) translateY(-50%);
+                            margin-bottom: 10px;
                         }
 
-                        &:before,
-                        &:after {
-                           
-                            content: "";
-                            position: absolute;
-                            display: block;
-                            width: 100%;
-                            height: 4px;
-                            background-color: @black;
-                            left: 0px;
+                        input {
+
+
+                            &[type="text"] {}
+
+                            &[type="number"] {}
+                        }
+
+                        label {}
+
+                        textarea {
+
+                            resize: none;
+                            height: 250px;
+                        }
+
+                        .full-green {
+                            margin: 0 auto;
+                            width: 40%;
+                            padding: 15px 15px;
                         }
                     }
                 }
-
             }
         }
 
@@ -1338,7 +1468,7 @@ section {
                             }
                         }
 
-                        &.edit {
+                        &.edit-btn {
                             color: @blue-1;
 
                             &:hover {
