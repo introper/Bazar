@@ -37,26 +37,31 @@ jQuery(document).ready(function ($) {
   $(document).on("click", ".edit-btn", function (e) {
     e.preventDefault();
     $(".edit").toggleClass("active");
+    $("html").toggleClass("active");
   });
 
   $(document).on("click", ".add-item", function (e) {
     e.preventDefault();
-    $(".add").toggleClass("active");
+    $(".add").toggleClass("active"); 
+    $("html").toggleClass("active");
   });
 
   $(document).on("click", ".exit-block", function (e) {
     e.preventDefault();
     $(document).find(".modal").removeClass("active");
+    $(document).find("html").removeClass("active");
   });
 
   $(document).on("click", ".bg-modal", function (e) {
     e.preventDefault();
     $(document).find(".modal").removeClass("active");
+    $(document).find("html").removeClass("active");
   });
 
   $(document).keyup(function (e) {
     if (e.key === "Escape") {
       $(document).find(".modal").removeClass("active");
+      $(document).find("html").removeClass("active");
     }
   });
 

@@ -49,7 +49,7 @@
                         <input type="number" name="price" />
                         <label for="description">Upravit popisek</label>
                         <textarea name="description" id="" cols="30" rows="10"></textarea>
-                    <button type="submit" class="btn full-green">Upravit</button>
+                    <button type="submit" class="btn normal-tran">Upravit</button>
                     
                     </form>
                 </div>
