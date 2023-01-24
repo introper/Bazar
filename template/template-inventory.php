@@ -25,6 +25,14 @@
                         <input type="text" />
                         <input type="number" />
                         <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <div class="file-upload">
+                            <div class="upload-field">
+                                <div class="fake-button" >Vyberte soubor</div>
+                                <input type="file" class="file-upload-field" id="fileInput" multiple />
+                            </div>
+                            <div id="fileList" class="file-upload-items"></div>
+                            <div id="error"></div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -44,13 +52,13 @@
 
                     <form action="" class="form-edit">
                         <label for="name">Upravit název</label>
-                        <input type="text" name="name"/> 
+                        <input type="text" name="name" />
                         <label for="price">Upravit cenu</label>
                         <input type="number" name="price" />
                         <label for="description">Upravit popisek</label>
                         <textarea name="description" id="" cols="30" rows="10"></textarea>
-                    <button type="submit" class="btn normal-tran">Upravit</button>
-                    
+                        <button type="submit" class="btn normal-tran">Upravit</button>
+
                     </form>
                 </div>
             </div>

@@ -9,11 +9,12 @@
     <link href="data/css/fonts.css" rel="stylesheet" type="text/css">
     <link href="data/css/styles.css" rel="stylesheet" type="text/css">
     <link href="data/css/swiper-bundle.min.css" rel="stylesheet" type="text/css">
-    
+    <link href="data/css/aksFileUpload.css" rel="stylesheet" type="text/css">
+
     <script type="text/javascript" src="data/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="data/js/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="data/js/jquery.validate.js"></script>
-
+    <script type="text/javascript" src="data/js/aksFileUpload.js"></script>
     <script type="text/javascript" src="data/js/scripts.js"></script>
 
 
