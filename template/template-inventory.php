@@ -27,11 +27,11 @@
                         <textarea name="" id="" cols="30" rows="10"></textarea>
                         <div class="file-upload">
                             <div class="upload-field">
-                                <div class="fake-button" >Vyberte soubor</div>
+                                <div class="fake-button" id="drop-zone">Vyberte soubor</div>
                                 <input type="file" class="file-upload-field" id="fileInput" multiple />
                             </div>
                             <div id="fileList" class="file-upload-items"></div>
-                            <div id="error"></div>
+                            <div id="error" class="error"></div>
                         </div>
                     </form>
                 </div>
