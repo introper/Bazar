@@ -32,6 +32,7 @@
                 <div class="hamburger">
                     <div></div>
                 </div>
+                <div class="bg"></div>
                 <form action="" method="GET" class="search">
                     <input type="text" class="search-input" name="s" placeholder="Hledat knihu">
                     <button class="btn search">Hledat</button>
@@ -39,10 +40,10 @@
                 <nav class="links" aria-label="Navigace">
                     <h2 class="screenReaderElement">Navigace</h2>
                     <ul>
-                        <li><a href="#benefits">Položky</a></li>
-                        <li><a href="#jobs">Odhlásit</a></li>
-                        <li><a href="#about-us">Přihlášení</a></li>
-                        <li><a href="#our-team">Registrace</a></li>
+                        <li><a href="">Položky</a></li>
+                        <li><a href="">Odhlásit</a></li>
+                        <li><a href="">Přihlášení</a></li>
+                        <li><a href="">Registrace</a></li>
                     </ul>
                 </nav>
 

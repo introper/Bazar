@@ -4,20 +4,27 @@
         <div class="container">
 
             <div class="side-panel">
-                <h2>Kategorie</h2>
-                <ul>
-                    <li><a href="">Český jazyk</a></li>
-                    <li><a href="">Německý jazyk</a></li>
-                    <li><a href="">Anglický jazyk</a></li>
-                    <li><a href="">Matematika</a></li>
-                    <li><a href="">Zeměpis</a></li>
-                    <li><a href="">Dějepis</a></li>
-                    <li><a href="">Občanská nauka</a></li>
-                    <li><a href="">Německý jazyk</a></li>
-                </ul>
+                <div class="holder">
+                    <h2>Kategorie</h2>
+                    <ul>
+                        <li><a href="">Český jazyk</a></li>
+                        <li><a href="">Německý jazyk</a></li>
+                        <li><a href="">Anglický jazyk</a></li>
+                        <li><a href="">Matematika</a></li>
+                        <li><a href="">Zeměpis</a></li>
+                        <li><a href="">Dějepis</a></li>
+                        <li><a href="">Občanská nauka</a></li>
+                        <li><a href="">Německý jazyk</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-side"></div>
+            </div>
+            <div class="filtering">
+                <div></div>
             </div>
             <div class="content">
-            <a href="" class="item">
+                <a href="" class="item">
                     <div class="img">
                         <img src="data/images/cz-jazyk.jpg" alt="" />
                         <div class="bg"></div>
@@ -127,7 +134,7 @@
                 </a>
 
             </div>
-            </div>
+        </div>
         </div>
     </section>
 </main>

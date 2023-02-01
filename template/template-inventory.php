@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="parameters">
-                    <h3>Vytvořit položku</h3>
+
                     <div class="exit-block">
                         <div class="exit">
 
@@ -22,9 +22,19 @@
                     </div>
 
                     <form action="" class="form-add">
-                        <input type="text" />
-                        <input type="number" />
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <h3>Vytvořit položku</h3>
+                        <div class="holder"><label for="new-name">Zadejte název</label>
+                            <input type="text" name="new-name" id="new-name" />
+                        </div>
+                        <div class="holder"><label for="price">Zadejte cenu</label>
+                            <input type="number" name="price" id="price" />
+                        </div>
+                        <div class="holder"> <label for="description">Zadejte popisek</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+
+
+
                         <div class="file-upload">
                             <div class="upload-field">
                                 <div class="fake-button" id="drop-zone">Vyberte soubor</div>
@@ -33,6 +43,9 @@
                             <div id="fileList" class="file-upload-items"></div>
                             <div id="error" class="error"></div>
                         </div>
+                        <button class="btn normal-tran">
+                            Vytvořit
+                        </button>
                     </form>
                 </div>
             </div>

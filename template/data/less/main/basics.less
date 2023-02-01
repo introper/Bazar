@@ -22,6 +22,7 @@
 .file-upload {
     position: relative;
     display: block;
+    width: 100%;
 
     .dragover {
         border: 2px dashed @blue-1;
@@ -153,7 +154,10 @@ body {
             display: flex;
             align-items: center;
 
-            img {}
+            img {
+                width: 100%;
+                height: 100%;
+            }
 
             .small {
                 display: none
@@ -193,6 +197,7 @@ body {
                 border: 1px solid @grey-2;
                 border-bottom-left-radius: 0px;
                 border-top-left-radius: 0px;
+                z-index: unset;
 
                 &:hover {
                     background-color: @green-1;
@@ -252,7 +257,13 @@ body {
             }
         }
 
-        .hamburger {}
+        .hamburger {
+            display: none;
+        }
+
+        .bg {
+            display: none
+        }
     }
 
 }
@@ -999,7 +1010,6 @@ section {
                 h2 {
                     color: @purple-3;
                     margin-bottom: 60px;
-                    font-size: 6rem;
                 }
 
                 p {
@@ -1315,7 +1325,54 @@ section {
                         color: @purple-3;
                     }
 
-                    .form-add {}
+                    .form-add {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        align-items: center;
+
+
+                        .holder {
+                            // float: left;
+                            width: 100%;
+                            // margin-right: 5%;
+
+                            input,
+                            textarea {
+                                .font-roboto-regular();
+                                font-size: 1.6rem;
+                                width: 100%;
+                                border: 1px solid @purple-3;
+                                margin: 0 0 20px 0;
+                                border-radius: 10px;
+                                padding: 10px;
+                                position: relative;
+                                resize: none;
+                            }
+
+                            textarea {
+                                height: 100px;
+                            }
+
+                            input[type="price"] {}
+
+                            label {
+                                .font-roboto-medium();
+                                font-size: 1.6rem;
+                                color: @purple-2;
+                                text-align: center;
+                                width: 100%;
+                                margin-bottom: 10px;
+                            }
+                        }
+
+                        .normal-tran {
+                            .t(0s);
+                            margin: 0 auto;
+                            width: 40%;
+                            padding: 15px 15px;
+                        }
+                    }
                 }
             }
 

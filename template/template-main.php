@@ -4,43 +4,50 @@
 
         <div class="container">
             <div class="side-panel">
-                <h2>Kategorie</h2>
-                <ul>
-                    <li class="first">
-                        <a class="year" href="">1. ročník <div class="arrow"></div></a>
-                        <ul>
-                            <li><a href="">Český jazyk</a></li>
-                            <li><a href="">Německý jazyk</a></li>
-                            <li><a href="">Anglický jazyk</a></li>
-                            <li><a href="">Matematika</a></li>
-                            <li><a href="">Zeměpis</a></li>
-                            <li><a href="">Dějepis</a></li>
-                            <li><a href="">Občanská nauka</a></li>
-                            <li><a href="">Německý jazyk</a></li>
-                        </ul>
-                    </li>
-                    <li class="first">
-                        <a class="year" href="">2. ročník<div class="arrow"></div></a>
-                        <ul>
-                            <li><a href="">#</a></li>
-                        </ul>
+                <div class="holder">
+                    <h2>Kategorie</h2>
+                    <ul>
+                        <li class="first">
+                            <a class="year" href="">1. ročník <div class="arrow"></div></a>
+                            <ul>
+                                <li><a href="">Český jazyk</a></li>
+                                <li><a href="">Německý jazyk</a></li>
+                                <li><a href="">Anglický jazyk</a></li>
+                                <li><a href="">Matematika</a></li>
+                                <li><a href="">Zeměpis</a></li>
+                                <li><a href="">Dějepis</a></li>
+                                <li><a href="">Občanská nauka</a></li>
+                                <li><a href="">Německý jazyk</a></li>
+                            </ul>
+                        </li>
+                        <li class="first">
+                            <a class="year" href="">2. ročník<div class="arrow"></div></a>
+                            <ul>
+                                <li><a href="">#</a></li>
+                            </ul>
 
-                    </li>
-                    <li class="first">
-                        <a class="year" href="">3. ročník<div class="arrow"></div></a>
-                        <ul>
-                            <li><a href="">#</a></li>
-                            <li><a href="">#</a></li>
-                        </ul>
-                    </li>
-                    <li class="first">
-                        <a class="year" href="">4. ročník<div class="arrow"></div></a>
-                        <ul>
-                            <li><a href="">#</a></li>
-                            <li><a href="">#</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                        </li>
+                        <li class="first">
+                            <a class="year" href="">3. ročník<div class="arrow"></div></a>
+                            <ul>
+                                <li><a href="">#</a></li>
+                                <li><a href="">#</a></li>
+                            </ul>
+                        </li>
+                        <li class="first">
+                            <a class="year" href="">4. ročník<div class="arrow"></div></a>
+                            <ul>
+                                <li><a href="">#</a></li>
+                                <li><a href="">#</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-side"></div>
+            </div>
+            <div class="filtering">
+                <div></div>
             </div>
             <div class="content">
                 <a href="" class="item">

@@ -1,1 +1,5 @@
 https://github.com/introper/wordpress
+
+admin_bazar
+
+maturita2023

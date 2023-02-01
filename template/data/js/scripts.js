@@ -91,7 +91,7 @@ jQuery(document).ready(function ($) {
         password2: {
           required: true,
           minlength: 8,
-          equalTo: "#password2"
+          equalTo: "#password"
         }
       },
       messages: {
@@ -113,6 +113,34 @@ jQuery(document).ready(function ($) {
     })
   });
 
+  $(document).on("click", ".filtering", function (e) {
+    e.preventDefault();
+    $(".side-panel").toggleClass("active");
+    // $(".search").toggleClass("active");
+    // $(".header .bg").toggleClass("active");
+    // $("html").toggleClass("active");
+  });
+  $(document).on("click", ".bg-side", function (e) {
+    e.preventDefault();
+    $(".side-panel").removeClass("active");
+  });
+  $(document).on("click", ".hamburger", function (e) {
+    e.preventDefault();
+    $(this).toggleClass("active");
+    $(".header nav").toggleClass("active");
+    // $(".search").toggleClass("active");
+    $(".header .bg").toggleClass("active");
+    // $("html").toggleClass("active");
+  });
+
+  $(document).on("click", ".bg", function (e) {
+    e.preventDefault();
+    $(".header nav").removeClass("active");
+    // $(".search").removeClass("active");
+    $(".header .bg").removeClass("active");
+    // $("html").removeClass("active");
+    $(".header .hamburger").toggleClass("active");
+  });
   function initFileUploadForm() {
     // přidává třídu "dragover"
     $('#fileInput').on("dragenter", function (ev) {
@@ -208,7 +236,7 @@ jQuery(document).ready(function ($) {
             var thumbnail = $('<img>').attr('src', e.target.result).attr('alt', 'Thumbnail Preview').attr('id', '' + id);
             id++;
             // vytvoří se jméno osuboru
-            // var fileName = $('<div>').text(file.name).addClass('file-name');
+            var fileName = $('<div>').text(file.name).addClass('file-name');
 
             // Create a container for the thumbnail and file name
             var container = $('<div>').addClass('thumbnail-container').append(thumbnail).append(fileName);
