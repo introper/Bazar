@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="swiper-dot" transform="translate(-3797 -86)">
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="15" cy="15" r="15" transform="translate(3797 86)" fill="#fff"/>
+    <line id="Line_3" data-name="Line 3" x2="15" transform="translate(3804.5 96.5)" fill="none" stroke="#00a0ff" stroke-linecap="round" stroke-width="1.5"/>
+    <line id="Line_4" data-name="Line 4" x2="15" transform="translate(3804.5 101)" fill="none" stroke="#00a0ff" stroke-linecap="round" stroke-width="1.5"/>
+    <line id="Line_5" data-name="Line 5" x2="15" transform="translate(3804.5 105.5)" fill="none" stroke="#00a0ff" stroke-linecap="round" stroke-width="1.5"/>
+  </g>
+</svg>

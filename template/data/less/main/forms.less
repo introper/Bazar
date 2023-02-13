@@ -1,13 +1,11 @@
 input[type="text"],
 input[type="search"],
 input[type="tel"],
-input[type="email"] {
-}
-textarea {
-}
+input[type="email"] {}
 
-select {
-}
+textarea {}
+
+select {}
 
 button,
 input[type="submit"] {
@@ -21,13 +19,19 @@ form {
 
 input[type="checkbox"] {
   display: none;
-  & + label {
+
+  &+label {
     &:before {
       content: "";
     }
   }
-  &:checked + label {
+
+  &:checked+label {
     &:before {
+      background-image: url("../images/check.svg");
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-position: center center;
     }
   }
 }

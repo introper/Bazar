@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13.25" height="8.519" viewBox="0 0 13.25 8.519">
+  <g id="bullet" transform="translate(-3703 -89.741)">
+    <g id="Rectangle_23" data-name="Rectangle 23" transform="translate(3703 93)" fill="#70c6ff" stroke="#00b9ff" stroke-width="0.5">
+      <path d="M1,0h9a0,0,0,0,1,0,0V2a0,0,0,0,1,0,0H1A1,1,0,0,1,0,1V1A1,1,0,0,1,1,0Z" stroke="none"/>
+      <path d="M1,.25H9.75a0,0,0,0,1,0,0v1.5a0,0,0,0,1,0,0H1A.75.75,0,0,1,.25,1V1A.75.75,0,0,1,1,.25Z" fill="none"/>
+    </g>
+    <g id="turn-e" transform="translate(3704 88)">
+      <path id="Path_113" data-name="Path 113" d="M7,3.5a.5.5,0,0,1,.829-.376l4,3.5a.5.5,0,0,1,0,.752l-4,3.5A.5.5,0,0,1,7,10.5Z" transform="translate(0 -1.001)" fill="#70c6ff" stroke="#00b9ff" stroke-width="0.5"/>
+    </g>
+    <rect id="Rectangle_24" data-name="Rectangle 24" width="1" height="1" transform="translate(3710.5 93.5)" fill="#70c6ff"/>
+  </g>
+</svg>

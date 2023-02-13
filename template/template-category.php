@@ -3,25 +3,147 @@
     <section class="category">
         <div class="container">
 
-            <div class="side-panel">
-                <div class="holder">
-                    <h2>Kategorie</h2>
-                    <ul>
-                        <li><a href="">Český jazyk</a></li>
-                        <li><a href="">Německý jazyk</a></li>
-                        <li><a href="">Anglický jazyk</a></li>
-                        <li><a href="">Matematika</a></li>
-                        <li><a href="">Zeměpis</a></li>
-                        <li><a href="">Dějepis</a></li>
-                        <li><a href="">Občanská nauka</a></li>
-                        <li><a href="">Německý jazyk</a></li>
-                    </ul>
+        <div class="filtering">
+                <div class="close" id="close">
+                    <div></div>
+                    <div></div>
                 </div>
+                <div class="bg">
+                </div>
+                <div class="yes"></div>
+                <form action="" class="filter-form">
+                    <div class="part">
+                        <h3>Ročník</h3>
+                        <ul class="checkbox-block">
+                            <li>
+                                <input value="main-cat" type="checkbox" name="Subcategory" id="Subcategory-1">
+                                <label for="Subcategory-1"><span>Podkategória</span><span class="arrow-fil"></span></label>
+                                <ul class="children">
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-1" type="checkbox" name="Subcategory" id="Subcategory-1.1">
+                                        <label for="Subcategory-1.1"><span>Podkategória</span></label>
+                                    </li>
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-2" type="checkbox" name="Subcategory" id="Subcategory-1.2">
+                                        <label for="Subcategory-1.2"><span>Podkategória</span></label>
+                                    </li>
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-3" type="checkbox" name="Subcategory" id="Subcategory-1.3">
+                                        <label for="Subcategory-1.3"><span>Podkategória</span></label>
+                                    </li>
+                                </ul>
 
-                <div class="bg-side"></div>
+                            </li>
+                        </ul>
+                        <ul class="checkbox-block">
+                            <li>
+                                <input value="main-cat" type="checkbox" name="Subcategory" id="Subcategory-1">
+                                <label for="Subcategory-1"><span>Podkategória</span><span class="arrow-fil"></span></label>
+                                <ul class="children">
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-1" type="checkbox" name="Subcategory" id="Subcategory-1.1">
+                                        <label for="Subcategory-1.1"><span>Podkategória</span></label>
+                                    </li>
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-2" type="checkbox" name="Subcategory" id="Subcategory-1.2">
+                                        <label for="Subcategory-1.2"><span>Podkategória</span></label>
+                                    </li>
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-3" type="checkbox" name="Subcategory" id="Subcategory-1.3">
+                                        <label for="Subcategory-1.3"><span>Podkategória</span></label>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                        <ul class="checkbox-block">
+                            <li>
+                                <input value="main-cat" type="checkbox" name="Subcategory" id="Subcategory-2">
+                                <label for="Subcategory-2"><span>Podkategória</span><span class="arrow-fil"></span></label>
+                                <ul class="children">
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-1" type="checkbox" name="Subcategory" id="Subcategory-2.1">
+                                        <label for="Subcategory-2.1"><span>Podkategória</span></label>
+                                    </li>
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-2" type="checkbox" name="Subcategory" id="Subcategory-2.2">
+                                        <label for="Subcategory-2.2"><span>Podkategória</span></label>
+                                    </li>
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-3" type="checkbox" name="Subcategory" id="Subcategory-2.3">
+                                        <label for="Subcategory-2.3"><span>Podkategória</span></label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="checkbox-block">
+                            <li>
+                                <input value="main-cat" type="checkbox" name="Subcategory" id="Subcategory-3">
+                                <label for="Subcategory-3"><span>Podkategória</span><span class="arrow-fil"></span></label>
+                                <ul class="children">
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-1" type="checkbox" name="Subcategory" id="Subcategory-3.1">
+                                        <label for="Subcategory-3.1"><span>Podkategória</span></label>
+                                    </li>
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-2" type="checkbox" name="Subcategory" id="Subcategory-3.2">
+                                        <label for="Subcategory-3.2"><span>Podkategória</span></label>
+                                    </li>
+                                    <li class="checkbox-holder">
+                                        <input value="subcategory-3" type="checkbox" name="Subcategory" id="Subcategory-3.3">
+                                        <label for="Subcategory-3.3"><span>Podkategória</span></label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="part">
+                        <h3>Cena od do</h3>
+                        <div class="slide-part">
+                            <div id="slider-range" class="price-filter-range" name="rangeInput"></div>
+                            <!-- <label for="min_price" class="slider-label">Od:</label> -->
+                            <div class="wrapper">
+                                <input type="number" min=0 id="min_price" name="min_price" class="price-range-field" />
+                                <input type="hidden" min=0 id="min_price_hidden" name="min_price" class="price-range-field" />
+
+                                <span>Kč</span>
+                            </div>
+                            <!-- <label for="max_price" class="slider-label">Do:</label> -->
+                            <div class="wrapper">
+                                <input type="number" min=0 id="max_price" name="max_price" class="price-range-field" />
+                                <input type="hidden" min=0 id="max_price_hidden" name="max_price" class="price-range-field" />
+
+                                <span>Kč</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part">
+                        <button href="" class="btn full-blue">Vyhledat</button>
+                    </div>
+                </form>
             </div>
-            <div class="filtering">
-                <div></div>
+            <div class="sorting">
+                <a href="" class="btn full-blue " id="filter">Filtrace</a>
+                <div class="sort">
+                    <div class="holder">
+                        <span>Seřadit podle:</span>
+                    </div>
+                    <div class="dropdown">
+                        <div class="active-select"><a href="#">Nejnovější</a></div>
+                        <div class="select-block">
+                            <div class="select-item">
+                                <a href="#" id="newest" data-slug="newest" class="itme-text">Nejnovější</a>
+                            </div>
+                            <div class="select-item">
+                                <a href="#" id="oldest" data-slug="oldest" class="itme-text">Nejstarší</a>
+                            </div>
+                        </div>
+                        <select name="sorting" id="sorting-select">
+                            <option>newest</option>
+                            <option>oldest</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="content">
                 <a href="" class="item">

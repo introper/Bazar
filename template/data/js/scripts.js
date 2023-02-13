@@ -34,36 +34,36 @@ jQuery(document).ready(function ($) {
   $(document).ready(fixedHeader);
   $(window).scroll(fixedHeader);
 
-  $(document).on("click", ".edit-btn", function (e) {
-    e.preventDefault();
-    $(".edit").toggleClass("active");
-    $("html").toggleClass("active");
-  });
+  // $(document).on("click", ".edit-btn", function (e) {
+  //   e.preventDefault();
+  //   $(".edit").toggleClass("active");
+  //   $("html").toggleClass("active");
+  // });
 
-  $(document).on("click", ".add-item", function (e) {
-    e.preventDefault();
-    $(".add").toggleClass("active");
-    $("html").toggleClass("active");
-  });
+  // $(document).on("click", ".add-item", function (e) {
+  //   e.preventDefault();
+  //   $(".add").toggleClass("active");
+  //   $("html").toggleClass("active");
+  // });
 
-  $(document).on("click", ".exit-block", function (e) {
-    e.preventDefault();
-    $(document).find(".modal").removeClass("active");
-    $(document).find("html").removeClass("active");
-  });
+  // $(document).on("click", ".exit-block", function (e) {
+  //   e.preventDefault();
+  //   $(document).find(".modal").removeClass("active");
+  //   $(document).find("html").removeClass("active");
+  // });
 
-  $(document).on("click", ".bg-modal", function (e) {
-    e.preventDefault();
-    $(document).find(".modal").removeClass("active");
-    $(document).find("html").removeClass("active");
-  });
+  // $(document).on("click", ".bg-modal", function (e) {
+  //   e.preventDefault();
+  //   $(document).find(".modal").removeClass("active");
+  //   $(document).find("html").removeClass("active");
+  // });
 
-  $(document).keyup(function (e) {
-    if (e.key === "Escape") {
-      $(document).find(".modal").removeClass("active");
-      $(document).find("html").removeClass("active");
-    }
-  });
+  // $(document).keyup(function (e) {
+  //   if (e.key === "Escape") {
+  //     $(document).find(".modal").removeClass("active");
+  //     $(document).find("html").removeClass("active");
+  //   }
+  // });
 
 
   $().ready(function () {
@@ -112,35 +112,213 @@ jQuery(document).ready(function ($) {
 
     })
   });
+  $(document).ready(function () {
+    $(".checkbox-block input[type=checkbox]").on("change", function () {
+      var checkboxValue = $(this).prop("checked");
+      decideParentsValue($(this));
+      $(this).closest("li").find(".children input[type=checkbox]").prop("checked", checkboxValue);
+    });
+    function decideParentsValue(me) {
+      var shouldTraverseUp = false;
+      var checkedCount = 0;
+      var myValue = me.prop("checked");
 
-  $(document).on("click", ".filtering", function (e) {
-    e.preventDefault();
-    $(".side-panel").toggleClass("active");
-    // $(".search").toggleClass("active");
-    // $(".header .bg").toggleClass("active");
-    // $("html").toggleClass("active");
+      $.each($(me).closest(".children").children('li'), function () {
+        var checkbox = $(this).children("input[type=checkbox]");
+        if ($(checkbox).prop("checked")) {
+          checkedCount = checkedCount + 1;
+        }
+      });
+      if ((myValue == true && checkedCount == 1) || (myValue == false && checkedCount == 0)) {
+        shouldTraverseUp = true;
+      }
+      if (shouldTraverseUp == true) {
+        var inputCheckBox = $(me).closest(".children").siblings("input[type=checkbox]");
+        inputCheckBox.prop("checked", me.prop("checked"));
+        decideParentsValue(inputCheckBox);
+      }
+    }
   });
-  $(document).on("click", ".bg-side", function (e) {
-    e.preventDefault();
-    $(".side-panel").removeClass("active");
-  });
-  $(document).on("click", ".hamburger", function (e) {
+  $(document).on("click", ".arrow-fil", function (e) {
     e.preventDefault();
     $(this).toggleClass("active");
-    $(".header nav").toggleClass("active");
+    $(this).closest('li').siblings('li').find('.arrow-fil').removeClass('active');
+    $(this).closest('li').find('ul').toggleClass('active');
+    $(this).closest('li').siblings('li').find('ul').removeClass('active');
+  });
+  $(document).ready(function () {
+    $("#min_price,#max_price").on('change', function () {
+      var min_price_range = parseInt($("#min_price").val());
+      var max_price_range = parseInt($("#max_price").val());
+      var maximum = 1000;
+      if (min_price_range >= max_price_range) {
+        var min_price_range = max_price_range - 50;
+        $('#min_price').val(min_price_range);
+      }
+      if (min_price_range < 0) {
+        var min_price_range = 0;
+        var max_price_range = 50;
+        $('#min_price').val(min_price_range);
+        $('#max_price').val(max_price_range);
+      }
+      if (max_price_range > maximum) {
+        var max_price_range = maximum - 10;
+        $('#max_price').val(max_price_range);
+      }
+      $("#slider-range").slider({
+        values: [min_price_range, max_price_range]
+      });
+    });
+
+    $(function () {
+      $("#slider-range").slider({
+        range: true,
+        orientation: "horizontal",
+        min: 0,
+        max: 1000,
+        values: [100, 800],
+        step: 1,
+        slide: function (event, ui) {
+          if (ui.values[0] + 1 >= ui.values[1]) {
+            return false;
+          }
+          $("#min_price").val(ui.values[0]);
+          $("#max_price").val(ui.values[1]);
+          $("#min_price_hidden").val(ui.values[0]);
+          $("#max_price_hidden").val(ui.values[1]);
+        },
+
+      });
+      $("#min_price").val($("#slider-range").slider("values", 0));
+      $("#max_price").val($("#slider-range").slider("values", 1));
+    });
+  });
+
+  $(document).on("click", ".dropdown", function (e) {
+    e.preventDefault();
+    $(this).addClass("active");
+    $("body").addClass("body-select")
+  });
+
+  $(document).on("click", ".body-select", function (e) {
+    $(".dropdown").removeClass("active");
+    $("body").removeClass("body-select");
+  });
+
+  $(document).on("click", ".dropdown .select-block .select-item", function (e) {
+    e.preventDefault();
+    var value = $(this).attr("data-slug");
+    var id = $(this).attr("id");
+    var text = $(this).find("a").text()
+    var dropdown = $(this).closest(".dropdown");
+    var activeSelect = $('.active-select a');
+
+    dropdown.find(activeSelect).text(text);
+    var select = dropdown.find("select");
+    select.val(value).change();
+  });
+  $(document).on("click", "#filter", function (e) {
+    e.preventDefault();
+    $(document).find(".filtering").addClass("active");
     // $(".search").toggleClass("active");
-    $(".header .bg").toggleClass("active");
-    // $("html").toggleClass("active");
+    // $(".header .bg").toggleClass("active");
+    $("html").addClass("active");
+  });
+
+  $(document).on("click", ".hamburger-2", function (e) {
+    e.preventDefault();
+    $(document).find(".nav-holder").addClass("active");
+    $("html").addClass("active");
+  });
+
+  $(document).on("click", ".add-item", function (e) {
+    e.preventDefault();
+    $(document).find(".modal-add").addClass("active");
+    $("html").addClass("active");
+  });
+  $(document).on("click", ".edit-btn", function (e) {
+    e.preventDefault();
+    $(document).find(".modal-edit").addClass("active");
+    $("html").addClass("active");
+  });
+  $(document).on("click", ".close", function (e) {
+    e.preventDefault();
+    $(document).find(".filtering").removeClass("active");
+    $(document).find(".nav-holder").removeClass("active");
+    $(document).find(".modal").removeClass("active");
+    $("html").removeClass("active");
   });
 
   $(document).on("click", ".bg", function (e) {
     e.preventDefault();
-    $(".header nav").removeClass("active");
-    // $(".search").removeClass("active");
-    $(".header .bg").removeClass("active");
-    // $("html").removeClass("active");
-    $(".header .hamburger").toggleClass("active");
+    $(document).find(".filtering").removeClass("active");
+    $(document).find(".nav-holder").removeClass("active");
+    $(document).find(".modal").removeClass("active");
+    $("html").removeClass("active");
   });
+
+  $('#search-icon').click(function (event) {
+    var formElement = $('.search-part');
+    $(formElement).addClass('active');
+    $('.search-input').focus();
+    event.stopPropagation();
+  });
+
+  $(document).click(function (event) {
+    var formElement = $('.search-part');
+    if (!$(formElement).is(event.target) && $(formElement).has(event.target).length === 0) {
+      $(formElement).removeClass('active');
+    }
+  });
+
+  $(document).keyup(function (e) {
+    if (e.key === "Escape") {
+      $(document).find(".search-part").removeClass("active");
+      $(document).find(".filtering").removeClass("active");
+      $(document).find(".nav-holder").removeClass("active");
+      $(document).find(".modal").removeClass("active");
+      $("html").removeClass("active");
+    }
+  });
+
+  $(document).ready(function () {
+    $("input").on("input", function () {
+      if ($(this).val().length > 0) {
+        $(this).siblings("label").addClass("active");
+      } else {
+        $(this).siblings("label").removeClass("active");
+      }
+    });
+  });
+
+  $(document).ready(function () {
+    $("textarea").on("input", function () {
+      if ($(this).val().length > 0) {
+        $(this).siblings("label").addClass("active");
+      } else {
+        $(this).siblings("label").removeClass("active");
+      }
+    });
+  });
+  // $(document).on("click", ".bg", function (e) {
+  //   e.preventDefault();
+  //   $(".header nav").removeClass("active");
+  //   $(document).find(".filtering").toggleClass("active");
+  //   $(".header .bg").removeClass("active");
+  //   // $("html").removeClass("active");
+  //   $(".header .hamburger").toggleClass("active");
+  // });
+  // $(document).on("click", ".hamburger", function (e) {
+  //   e.preventDefault();
+  //   $(this).toggleClass("active");
+  //   $(".header nav").toggleClass("active");
+  //   $(".header .bg").toggleClass("active");
+  //   // $("html").toggleClass("active");
+  // });
+
+
+
+
   function initFileUploadForm() {
     // přidává třídu "dragover"
     $('#fileInput').on("dragenter", function (ev) {
@@ -180,7 +358,7 @@ jQuery(document).ready(function ($) {
             var thumbnail = $('<img>').attr('src', e.target.result).attr('alt', 'Thumbnail Preview').attr('id', '' + id);
             id++;
             // vytvoří se jméno osuboru
-            // var fileName = $('<div>').text(file.name).addClass('file-name');
+            var fileName = $('<div>').text(file.name).addClass('file-name');
 
             var container = $('<div>').addClass('thumbnail-container').append(thumbnail).append(fileName);
             // tlačítko na oddělání
