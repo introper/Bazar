@@ -205,15 +205,15 @@ jQuery(document).ready(function ($) {
     $("body").removeClass("body-select");
   });
 
-  $(document).on("click", ".dropdown .select-block .select-item", function (e) {
+  $(document).on("click", ".dropdown .select-block .select-item a", function (e) {
     e.preventDefault();
     var value = $(this).attr("data-slug");
     var id = $(this).attr("id");
-    var text = $(this).find("a").text()
+    var text = $(this).text();
     var dropdown = $(this).closest(".dropdown");
-    var activeSelect = $('.active-select a');
+    var activeSelect = dropdown.find('.active-select a');
 
-    dropdown.find(activeSelect).text(text);
+    activeSelect.text(text);
     var select = dropdown.find("select");
     select.val(value).change();
   });
@@ -231,16 +231,30 @@ jQuery(document).ready(function ($) {
     $("html").addClass("active");
   });
 
+
+  $(document).on("click", ".edit-btn", function (e) {
+    e.preventDefault();
+    var href = $(this).attr("data-target");
+    if (href.length > 0) {
+      var element = $(document).find(".modal-edit#" + href);
+      if (element.length > 0 && element.hasClass("modal-edit")) {
+        element.addClass("active");
+        $("html").addClass("active");
+      }
+    }
+
+  });
+
   $(document).on("click", ".add-item", function (e) {
     e.preventDefault();
     $(document).find(".modal-add").addClass("active");
     $("html").addClass("active");
   });
-  $(document).on("click", ".edit-btn", function (e) {
-    e.preventDefault();
-    $(document).find(".modal-edit").addClass("active");
-    $("html").addClass("active");
-  });
+  // $(document).on("click", ".edit-btn", function (e) {
+  //   e.preventDefault();
+  //   $(document).find(".modal-edit").addClass("active");
+  //   $("html").addClass("active");
+  // });
   $(document).on("click", ".close", function (e) {
     e.preventDefault();
     $(document).find(".filtering").removeClass("active");
@@ -300,21 +314,21 @@ jQuery(document).ready(function ($) {
       }
     });
   });
-  // $(document).on("click", ".bg", function (e) {
-  //   e.preventDefault();
-  //   $(".header nav").removeClass("active");
-  //   $(document).find(".filtering").toggleClass("active");
-  //   $(".header .bg").removeClass("active");
-  //   // $("html").removeClass("active");
-  //   $(".header .hamburger").toggleClass("active");
-  // });
-  // $(document).on("click", ".hamburger", function (e) {
-  //   e.preventDefault();
-  //   $(this).toggleClass("active");
-  //   $(".header nav").toggleClass("active");
-  //   $(".header .bg").toggleClass("active");
-  //   // $("html").toggleClass("active");
-  // });
+  $(document).on("click", ".bg", function (e) {
+    e.preventDefault();
+    $(".header nav").removeClass("active");
+    $(document).find(".filtering").toggleClass("active");
+    $(".header .bg").removeClass("active");
+    // $("html").removeClass("active");
+    $(".header .hamburger").toggleClass("active");
+  });
+  $(document).on("click", ".hamburger", function (e) {
+    e.preventDefault();
+    $(this).toggleClass("active");
+    $(".header nav").toggleClass("active");
+    $(".header .bg").toggleClass("active");
+    // $("html").toggleClass("active");
+  });
 
 
 
@@ -452,4 +466,24 @@ jQuery(document).ready(function ($) {
       $("#fileInput").click();
     });
   });
+
+  $(document).on("change", "#sorting-year", function () {
+    const value = $(this).val();
+    if (value !== null) {
+      $.ajax({
+        type: "POST",
+        url: window.location.href,
+        data: {
+          setCategory: value
+        },
+        success: function (response) {
+          const mainBlock = $(document).find(".holder");
+          mainBlock.css("display", "block");
+          mainBlock.find(".generated").html(response);
+        }
+      });
+    }
+  });
+
+
 });

@@ -4,6 +4,10 @@
 get_header();
 
 
+$ID = get_queried_object_id();
+
+$author_id = $post->post_author;
+$authord = get_the_author_meta('user_email', $author_id);
 ?>
 <main role="main" class="main">
     <section class="detail-section">
@@ -13,21 +17,20 @@ get_header();
                     <div class="swiper detail">
                         <!-- Additional required wrapper -->
 
+                        <?php $gal = get_field("galerie", $ID); ?>
+                        <?php if ($gal) : ?>
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <?php foreach ($gal as $item) : ?>
 
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="swiper-slide">
-                                <div href="" class="swiper-div">
-                                    <img src="data/images/cz-jazyk-2.jpg" alt="">
-                                </div>
+                                    <div class="swiper-slide">
+                                        <div href="" class="swiper-div">
+                                            <img src="<?php echo $item['sizes']['thumbnail']; ?>" alt="">
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
-                            <div class="swiper-slide">
-                                <div href="" class="swiper-div">
-                                    <img src="data/images/cz-jazyk-3.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-
+                        <?php endif; ?>
 
                     </div>
                     <div class="swiper-pagination"></div>
@@ -35,17 +38,22 @@ get_header();
                     <div class="swiper-button-next swiper-button-next-detail"></div>
                 </div>
                 <div class="right">
-                    <h2>Český jazyk 1. ročník</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut hic reiciendis quisquam aperiam tempora voluptas quasi itaque assumenda nobis atque ut impedit error aliquid sapiente necessitatibus, placeat quas adipisci. Omnis.
-                        Repellendus quibusdam magni beatae ut itaque. Vel omnis et minus, ut quod nesciunt mollitia recusandae inventore. Illum, ducimus cum! Temporibus odio debitis, ullam odit iusto beatae voluptas unde cupiditate distinctio?
-                        Reprehenderit sequi vitae enim quod modi ab obcaecati officia pariatur rerum ipsum, debitis aspernatur nam ratione neque at provident est autem atque voluptas magni esse! Saepe blanditiis ut earum ullam!
-                        Impedit molestias sapiente, ad nesciunt dolorem porro accusamus id assumenda nisi veniam earum eius neque laborum aliquid, dolor minus sit deserunt! Quidem iusto neque modi eos aut consequuntur commodi qui!
-                    </p>
-                    <div class="price"><span>Cena: <strong>123 Kč</strong></span></div>
 
+                    <?php $title = get_the_title($ID); ?>
+
+                    <h2><?php echo $title ?></h2>
+                    <?php $popisek = get_field("popisek", $ID); ?>
+                    <?php if ($popisek) : ?>
+                        <p><?php echo $popisek; ?></p>
+                    <?php endif; ?>
+                    <?php $cena = get_field("cena", $ID); ?>
+                    <?php if ($cena) : ?>
+                        <div class="price"><span>Cena: <strong><?php echo $cena; ?> Kč</strong></span></div>
+                    <?php endif; ?>
                     <div class="contact">
                         <span>Kontakt na majitele:</span>
-                        <a href="mailTo:" class="email">brozovic_michal@oauh.cz</a>
+
+                        <a href="mailTo:<?php echo ($authord) ?>" class="email"><?php echo ($authord) ?></a>
                     </div>
                 </div>
             </div>

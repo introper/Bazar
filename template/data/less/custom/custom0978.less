@@ -118,71 +118,8 @@ section {}
   }
 }
 
-.side-panel {
-  h2 {}
-
-  ul {
-    .first {
-      &:before {}
-
-      .year {
-        &:before {}
-
-        .arrow {}
-      }
-
-      ul {
-        li {
-          a {}
-        }
-      }
-    }
-  }
-}
-
 .main {
   .main-section {
-    .side-panel {
-      h2 {}
-
-      ul {
-        .first {
-          &:before {}
-
-          &:hover {
-            .year {
-              &:before {}
-
-              .arrow {}
-            }
-          }
-
-          .year {
-            &:before {}
-
-            .arrow {
-              &.active {}
-            }
-          }
-
-          ul {
-            &.active {}
-
-            li {
-              &:before {}
-
-              &::after {}
-
-              &:hover {}
-
-              a {
-                &:hover {}
-              }
-            }
-          }
-        }
-      }
-    }
 
     .content {
       .item {
@@ -208,15 +145,6 @@ section {}
   .category {
     margin-bottom: 100px;
 
-    .side-panel {
-      ul {
-        li {
-          &:before {}
-
-          a {}
-        }
-      }
-    }
   }
 
   .detail-section {
@@ -314,79 +242,6 @@ section {}
       a {}
     }
 
-    .modal {
-      .bg-modal {}
-
-      .exit-block {
-        .exit {
-          &:before {}
-
-          &:after {}
-
-          &:before,
-          &:after {}
-        }
-      }
-
-      &.add {
-        .parameters {
-          h3 {}
-
-          .form-add {
-            .holder {
-
-              input,
-              textarea {
-                font-size: 1.5rem;
-              }
-
-              textarea {}
-
-              input[type="price"] {}
-
-              label {
-                font-size: 1.5rem;
-              }
-            }
-
-            .normal-tran {}
-          }
-        }
-      }
-
-      &.edit {
-        .editables {
-          h3 {}
-
-          h4 {}
-
-          .form-edit {
-
-            input,
-            textarea {
-              font-size: 1.5rem;
-            }
-
-            label {
-              font-size: 1.5rem;
-            }
-
-            input {
-              &[type="text"] {}
-
-              &[type="number"] {}
-            }
-
-            label {}
-
-            textarea {}
-
-            .normal-tran {}
-          }
-        }
-      }
-    }
-
     .content {
       .item {
         .img {
@@ -405,6 +260,114 @@ section {}
           a {
             &:first-of-type {}
           }
+        }
+      }
+    }
+  }
+
+  .modal {
+    &.modal-add {
+      padding-top: 130px;
+      padding-bottom: 130px;
+    }
+
+    .bg {}
+
+    .close {}
+
+    .modal-text {
+      width: 600px;
+      padding: 40px 40px 40px 40px;
+
+      h3 {}
+
+      .upper {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .form-review {
+        align-items: center;
+
+        .form-holder {
+          h4 {}
+
+          .phone {}
+
+          input,
+          textarea {
+            &+label {}
+          }
+
+          textarea {}
+
+          input[type="text"],
+          input[type="email"],
+          input[type="tel"],
+          input[type="number"],
+          textarea {
+            &+label {
+              &.active {}
+            }
+
+            &:focus {
+              .t(0.2s);
+
+              &+label {}
+            }
+          }
+
+          input[type="number"] {}
+
+          input[type="radio"] {}
+
+          input[type="checkbox"] {
+            &+label {}
+          }
+
+          .dropdown {
+            &.active {
+              .active-select {}
+
+              .select-block {}
+            }
+
+            .active-select {
+              a {}
+            }
+
+            .select-block {
+              .select-item {
+
+                a {}
+              }
+            }
+          }
+
+          select {}
+        }
+
+        &.drop {
+          h4 {}
+        }
+      }
+
+      .left {
+        margin-right: 0;
+        width: 100%;
+      }
+
+      .right {
+        width: 100%;
+
+        textarea {}
+
+        .form-holder {
+          h4 {}
+
+          &.button {}
+
+          .review-send {}
         }
       }
     }

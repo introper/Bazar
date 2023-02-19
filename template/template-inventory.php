@@ -197,64 +197,6 @@
                     </form>
                 </div>
             </div>
-            <!-- <div class="modal add">
-                <div class="bg-modal">
-                </div>
-                <div class="parameters">
-                    <div class="close" id="close">
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <form action="" class="form-add">
-                        <h3>Vytvořit položku</h3>
-                        <div class="holder"><label for="new-name">Zadejte název</label>
-                            <input type="text" name="new-name" id="new-name" />
-                        </div>
-                        <div class="holder"><label for="price">Zadejte cenu</label>
-                            <input type="number" name="price" id="price" />
-                        </div>
-                        <div class="holder"> <label for="description">Zadejte popisek</label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
-                        </div>
-                        <div class="file-upload">
-                            <div class="upload-field">
-                                <div class="fake-button" id="drop-zone">Vyberte soubor</div>
-                                <input type="file" class="file-upload-field" id="fileInput" multiple />
-                            </div>
-                            <div id="fileList" class="file-upload-items"></div>
-                            <div id="error" class="error"></div>
-                        </div>
-                        <button class="btn normal-tran">
-                            Vytvořit
-                        </button>
-                    </form>
-                </div>
-            </div> -->
-            <!-- <div class="modal edit">
-                <div class="bg-modal">
-
-                </div>
-
-                <div class="editables">
-                    <h3>Upravte položku</h3>
-                    <h4>Vygenerované jméno</h4>
-                    <div class="close" id="close">
-                        <div></div>
-                        <div></div>
-                    </div>
-
-                    <form action="" class="form-edit">
-                        <label for="name">Upravit název</label>
-                        <input type="text" name="name" />
-                        <label for="price">Upravit cenu</label>
-                        <input type="number" name="price" />
-                        <label for="description">Upravit popisek</label>
-                        <textarea name="description" id="" cols="30" rows="10"></textarea>
-                        <button type="submit" class="btn normal-tran">Upravit</button>
-
-                    </form>
-                </div>
-            </div> -->
             <div class="content">
                 <div href="" class="item">
                     <div class="img">
@@ -265,10 +207,12 @@
 
                     <div class="text">
                         <h3>Český jazyk 1. ročník dadwad</h3>
-                        <span>123 kč</span>
+                        <div class="holder">
+                            <span>123 kč</span>
+                            <a href="" class="delete">Smazat</a>
+                            <a href="" class="edit-btn">Upravit</a>
+                        </div>
 
-                        <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
                 <div href="" class="item">
@@ -280,10 +224,12 @@
 
                     <div class="text">
                         <h3>Český jazyk 1. ročník dadwad</h3>
-                        <span>123 kč</span>
+                        <div class="holder">
+                            <span>123 kč</span>
+                            <a href="" class="delete">Smazat</a>
+                            <a href="" class="edit-btn">Upravit</a>
+                        </div>
 
-                        <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
                 <div href="" class="item">
@@ -295,10 +241,12 @@
 
                     <div class="text">
                         <h3>Český jazyk 1. ročník dadwad</h3>
-                        <span>123 kč</span>
+                        <div class="holder">
+                            <span>123 kč</span>
+                            <a href="" class="delete">Smazat</a>
+                            <a href="" class="edit-btn">Upravit</a>
+                        </div>
 
-                        <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
                 <div href="" class="item">
@@ -310,10 +258,12 @@
 
                     <div class="text">
                         <h3>Český jazyk 1. ročník dadwad</h3>
-                        <span>123 kč</span>
+                        <div class="holder">
+                            <span>123 kč</span>
+                            <a href="" class="delete">Smazat</a>
+                            <a href="" class="edit-btn">Upravit</a>
+                        </div>
 
-                        <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
                 <div href="" class="item">
@@ -325,10 +275,12 @@
 
                     <div class="text">
                         <h3>Český jazyk 1. ročník dadwad</h3>
-                        <span>123 kč</span>
+                        <div class="holder">
+                            <span>123 kč</span>
+                            <a href="" class="delete">Smazat</a>
+                            <a href="" class="edit-btn">Upravit</a>
+                        </div>
 
-                        <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
                 <div href="" class="item">
@@ -340,10 +292,12 @@
 
                     <div class="text">
                         <h3>Český jazyk 1. ročník dadwad</h3>
-                        <span>123 kč</span>
+                        <div class="holder">
+                            <span>123 kč</span>
+                            <a href="" class="delete">Smazat</a>
+                            <a href="" class="edit-btn">Upravit</a>
+                        </div>
 
-                        <a href="" class="delete">Smazat</a>
-                        <a href="" class="edit-btn">Upravit</a>
                     </div>
                 </div>
 
