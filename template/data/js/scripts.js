@@ -205,11 +205,12 @@ jQuery(document).ready(function ($) {
     $("body").removeClass("body-select");
   });
 
-  $(document).on("click", ".dropdown .select-block .select-item a", function (e) {
+  $(document).on("click", ".dropdown .select-block .select-item", function (e) {
     e.preventDefault();
-    var value = $(this).attr("data-slug");
+    var value = $(this).find('a').attr("data-slug");
     var id = $(this).attr("id");
-    var text = $(this).text();
+    var text = $(this).find('a').text();
+    
     var dropdown = $(this).closest(".dropdown");
     var activeSelect = dropdown.find('.active-select a');
 
@@ -217,6 +218,7 @@ jQuery(document).ready(function ($) {
     var select = dropdown.find("select");
     select.val(value).change();
   });
+
   $(document).on("click", "#filter", function (e) {
     e.preventDefault();
     $(document).find(".filtering").addClass("active");
@@ -244,6 +246,18 @@ jQuery(document).ready(function ($) {
     }
 
   });
+  $(document).on("click", ".delete", function (e) {
+    e.preventDefault();
+    var href = $(this).attr("data-target");
+    if (href.length > 0) {
+      var element = $(document).find(".modal-delete#" + href);
+      if (element.length > 0 && element.hasClass("modal-delete")) {
+        element.addClass("active");
+        $("html").addClass("active");
+      }
+    }
+
+  });
 
   $(document).on("click", ".add-item", function (e) {
     e.preventDefault();
@@ -255,6 +269,12 @@ jQuery(document).ready(function ($) {
   //   $(document).find(".modal-edit").addClass("active");
   //   $("html").addClass("active");
   // });
+  $(document).on("click", ".exit", function (e) {
+    e.preventDefault();
+    $(document).find(".modal").removeClass("active");
+    $("html").removeClass("active");
+  });
+
   $(document).on("click", ".close", function (e) {
     e.preventDefault();
     $(document).find(".filtering").removeClass("active");

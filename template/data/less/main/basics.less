@@ -659,6 +659,29 @@ span {
         }
     }
 
+    &.full-red {
+        border: 2px solid @red-5;
+        -webkit-box-shadow: 0px 0px 16px 5px rgba(219, 40, 40, 0.16);
+        box-shadow: 0px 0px 16px 5px rgba(219, 40, 40, 0.16);
+        color: @white;
+
+        &::after {
+            background-color: @red-5;
+        }
+
+        &:hover {
+            color: @red-5;
+        }
+
+        &::before {
+            background-color: @white
+        }
+
+        &:hover::before {
+            height: 100%;
+        }
+    }
+
     &.border-blue {
         border: 2px solid @blue-3;
         -webkit-box-shadow: 0px 0px 13px 2px rgba(33, 133, 208, 0.1);
@@ -1908,6 +1931,32 @@ section {
     padding-top: 212px;
     padding-bottom: 212px;
     overflow-y: auto;
+
+    &.modal-delete {
+        .modal-text {
+            width: 470px;
+
+            h3 {
+                border-bottom: 0px;
+
+                strong {
+                    color: @purple-3;
+                }
+            }
+
+            .holder {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                .exit {
+                    margin-right: 30px;
+                }
+            }
+        }
+
+    }
 
     &.modal-add {
         padding-top: 130px;

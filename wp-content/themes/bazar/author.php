@@ -49,7 +49,7 @@ $userObject = get_queried_object();
                                     <?php if ($price) : ?>
                                         <span><?php echo $price; ?> Kč</span>
                                     <?php endif; ?>
-                                    <a href="<?php echo get_delete_post_link($post->ID); ?>" class="delete">Smazat</a>
+                                    <a href="#" data-target="<?php echo $post->post_name; ?>" class="delete">Smazat</a>
                                     <a href="#" class="edit-btn" data-target="<?php echo $post->post_name; ?>">Upravit</a>
                                 </div>
                             </div>
@@ -58,7 +58,37 @@ $userObject = get_queried_object();
                     <?php wp_reset_query(); ?>
                 <?php endif; ?>
             </div>
+            <?php if ($query->have_posts()) : ?>
+                <?php while ($query->have_posts()) : $query->the_post(); ?>
+                    <?php
+                    $idPost = $post->ID;
+                    ?>
 
+
+
+                    <div class="modal modal-delete" id="<?php echo $post->post_name; ?>">
+                        <div class="bg"></div>
+                        <div class="modal-text">
+                            <div class="close" id="close">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <h3>Přejete si smazt položku <br />
+                                <strong><?php echo get_the_title($post->ID); ?></strong>
+                            </h3>
+
+                            <div class="holder">
+                                <div class="btn full-blue exit">Zpět</div>
+                                <a href="<?php echo get_delete_post_link($post->ID); ?>" class="btn full-red">Smazat</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                <?php endwhile; ?>
+                <?php wp_reset_query(); ?>
+            <?php endif; ?>
             <div class="modal modal-add">
                 <div class="bg"></div>
                 <div class="modal-text">
@@ -66,7 +96,7 @@ $userObject = get_queried_object();
                         <div></div>
                         <div></div>
                     </div>
-                    <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') : ?>
+                    <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['create-book'])) : ?>
                         <?php $name = getFilter(INPUT_POST, "fullname"); ?>
                         <?php $price = getFilter(INPUT_POST, "fullprice"); ?>
                         <?php $desc = getFilter(INPUT_POST, "description"); ?>
@@ -190,13 +220,12 @@ $userObject = get_queried_object();
                             </div>
                         </div>
                         <div class="form-holder button">
-                            <button type="submit" name="submit-new" class="btn full-blue">Vytvořit</button>
+                            <button type="submit" name="create-book" class="btn full-blue">Vytvořit</button>
                         </div>
                     </form>
                 </div>
             </div>
 
-            <?php $query = new WP_Query($arg); ?>
             <?php if ($query->have_posts()) : ?>
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
                     <?php
@@ -205,15 +234,19 @@ $userObject = get_queried_object();
                     <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form' . $idPost])) : ?>
                         <?php
 
+                        $name = getFilter(INPUT_POST, "fullname");
                         $price = getFilter(INPUT_POST, "fullprice");
                         $desc = getFilter(INPUT_POST, "description");
 
                         if ($desc) :
-                            update_post_meta($idPost, "description", $desc);
+                            update_post_meta($idPost, "popisek", $desc);
                         endif;
 
                         if ($price) :
-                            update_post_meta($idPost, "fullprice", $price);
+                            update_post_meta($idPost, "cena", $price);
+                        endif;
+                        if ($name) :
+                            update_post_meta($idPost, "titulek", $name);
                         endif;
 
                         wp_redirect(get_author_posts_url($userID));
@@ -230,18 +263,19 @@ $userObject = get_queried_object();
                                 <div></div>
                             </div>
                             <h3>Upravte položku</h3>
-                            <form action="" class="form-review" method="POST">
+                            <form action="<?php echo get_author_posts_url($ID); ?>" class="form-review" method="POST">
                                 <div class="upper">
                                     <div class="left">
                                         <div class="form-holder">
-                                            <input type="text" name="name" id="name" value="<?php echo get_the_title($post->ID); ?>" />
+                                            <input type="text" name="fullname" id="name" value="<?php echo get_the_title($post->ID); ?>" />
                                             <label class="active" for="name">Název</label>
                                         </div>
                                         <div class="form-holder">
+                                            <?php $price = get_field("cena", $post->ID); ?>
                                             <input type="number" name="fullprice" id="fullprice" value="<?php echo $price; ?>" />
                                             <label class="active" for="fullprice">Cena</label>
                                         </div>
-                                        <div class=" form-holder drop">
+                                        <!-- <div class=" form-holder drop">
                                             <div class="holder">
                                                 <h4>Ročník</h4>
                                                 <div class="dropdown">
@@ -294,7 +328,7 @@ $userObject = get_queried_object();
                                                     </select>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class=" right">
                                         <div class="form-holder">
