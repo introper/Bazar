@@ -316,25 +316,25 @@ section {}
 }
 
 .content {
-  width: 100%;
-  grid-gap: 30px 30px;
-  padding-top: 0px;
+  grid-template-columns: repeat(3, 1fr);
+
+  &.author {}
 
   .item {
-    width: unset;
+    .holder {
+      .img {
+        height: 260px;
 
-    .img {
-      img {}
+        img {}
+      }
 
-      .bg {}
-
-      p {}
+      h3 {}
     }
 
-    .text {
-      h3 {}
-
+    .bottom {
       span {}
+
+      .full-blue {}
     }
   }
 }
@@ -423,51 +423,42 @@ section {}
   .detail-section {
     .centred {
       .left {
-        max-width: 650px;
+        max-width: 500px;
 
         .detail {
           .swiper-slide {
             .swiper-div {
-              height: 500px;
-
-              img {}
+              height: 550px;
             }
           }
         }
 
         .swiper-pagination {
           .swiper-pagination-bullet {}
+
+          .swiper-button-prev-detail {}
+
+          &::before {}
+
+          .swiper-button-next-detail {}
         }
-
-        .swiper-button-prev-detail {}
-
-        .swiper-button-next-detail {}
       }
 
       .right {
-        width: 760px;
-
-
         h2 {}
 
         p {}
 
         .price {
           span {
-            font-size: 1.8rem;
-
             strong {}
           }
         }
 
         .contact {
-          span {
-            font-size: 1.8rem;
-          }
+          span {}
 
-          a {
-            font-size: 1.8rem;
-          }
+          a {}
         }
       }
     }

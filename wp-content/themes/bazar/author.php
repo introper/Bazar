@@ -15,7 +15,7 @@ $userObject = get_queried_object();
                 <a href="" class="btn full-blue add-item">Přidat položku</a>
             </div>
 
-            <div class="content">
+            <div class="content author">
                 <?php
                 $author_id = get_query_var('author');
                 $arg = array(
@@ -29,7 +29,52 @@ $userObject = get_queried_object();
 
                 <?php if ($query->have_posts()) : ?>
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
-                        <div class="item">
+                        <div href="<?php echo get_the_permalink($post->ID); ?>" class="item">
+                            <div class="holder">
+                                <div class="settings-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="235.5" height="235.52" viewBox="0 0 235.5 235.52">
+                                        <g id="settings" transform="translate(-10.25 -10.24)">
+                                            <g id="Group_15" data-name="Group 15">
+                                                <path id="Path_115" data-name="Path 115" d="M241.459,108.652,211.2,103.706a86.7,86.7,0,0,0-7.224-17.434L221.64,61.1a5.127,5.127,0,0,0-.573-6.564l-19.912-19.9a5.118,5.118,0,0,0-6.61-.532l-24.8,17.823a85.881,85.881,0,0,0-17.572-7.306L146.9,14.479a5.124,5.124,0,0,0-5.043-4.239h-28.16a5.12,5.12,0,0,0-5.053,4.3l-4.895,29.972a86.254,86.254,0,0,0-17.6,7.229L61.42,34.074a5.123,5.123,0,0,0-6.6.543l-19.9,19.9a5.112,5.112,0,0,0-.573,6.554l17.4,24.9a86.72,86.72,0,0,0-7.363,17.715l-29.855,4.972a5.122,5.122,0,0,0-4.28,5.048v28.16a5.124,5.124,0,0,0,4.224,5.043L44.329,152.2a86.289,86.289,0,0,0,7.363,17.715L34.074,194.56a5.13,5.13,0,0,0,.543,6.6l19.907,19.922a5.119,5.119,0,0,0,6.559.573l24.934-17.464a86.38,86.38,0,0,0,17.638,7.291l5,30.008a5.1,5.1,0,0,0,5.043,4.27h28.16a5.114,5.114,0,0,0,5.038-4.224l5.35-30.157a86.1,86.1,0,0,0,17.562-7.347l25.114,17.618a5.113,5.113,0,0,0,6.564-.568l19.907-19.922a5.125,5.125,0,0,0,.532-6.615l-17.91-24.868a85.706,85.706,0,0,0,7.2-17.449l30.3-5.32a5.119,5.119,0,0,0,4.234-5.043V113.7a5.111,5.111,0,0,0-4.291-5.053ZM128,163.84A35.84,35.84,0,1,1,163.84,128,35.84,35.84,0,0,1,128,163.84Z" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+
+                                <?php if (get_the_post_thumbnail_url($post->ID)) : ?>
+                                    <div class="img">
+                                        <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo get_the_title($post->ID); ?>" />
+                                    </div>
+                                <?php endif; ?>
+
+                                <h3><?php echo get_the_title($post->ID); ?></h3>
+                                <?php $price = get_field("cena", $post->ID); ?>
+
+                            </div>
+
+                            <div class="bottom">
+
+                                <?php if ($price) : ?>
+                                    <span><strong><?php echo _e("Cena:", "Bazar-1"); ?></strong> <?php echo $price; ?> Kč</span>
+                                <?php endif; ?>
+                                <a href="<?php echo get_the_permalink($post->ID); ?>" class="btn full-blue"><?php echo _e("zobrazit", "Bazar-1"); ?></a>
+                            </div>
+                            <div class="settings-page">
+                                <div class="text-holder">
+                                    <h4><?php echo _e("Popis produktu", "Bazar-1"); ?></h4>
+                                    <?php $des = get_field("popisek", $post->ID); ?>
+                                    <?php if ($des) : ?>
+                                        <p><?php echo $des; ?></p>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="holder">
+                                    <a href="#" class="edit-btn btn border-white" data-target="<?php echo $post->post_name; ?>"><?php echo _e("Upravit", "Bazar-1"); ?></a>
+                                    <a href="#" class="delete btn full-red" data-target="<?php echo $post->post_name; ?>"><?php echo _e("Smazat", "Bazar-1"); ?></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="item">
                             <?php if (get_the_post_thumbnail_url($post->ID)) : ?>
                                 <div class="img">
                                     <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo get_the_title($post->ID); ?>" />
@@ -53,7 +98,8 @@ $userObject = get_queried_object();
                                     <a href="#" class="edit-btn" data-target="<?php echo $post->post_name; ?>">Upravit</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+
                     <?php endwhile; ?>
                     <?php wp_reset_query(); ?>
                 <?php endif; ?>
@@ -105,7 +151,6 @@ $userObject = get_queried_object();
                         <?php $files = $_FILES; ?>
                         <?php
                         $countFiles = count($_FILES["files"]["name"]);
-                        var_dump($files);
                         $arg = array(
                             "post_type" => "kniha",
                             "post_status" => "publish",
@@ -157,6 +202,7 @@ $userObject = get_queried_object();
 
 
                         endif;
+                        wp_redirect(get_author_posts_url($userID));
                         ?>
                     <?php endif; ?>
                     <h3>Vytvořit položku</h3>

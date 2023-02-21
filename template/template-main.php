@@ -253,7 +253,19 @@
                         <span>123 kč</span>
                     </div>
                 </a>
-
+                <div class="item-2">
+                    <div class="front">
+                        <div class="img">
+                            <img src="data/images/cz-jazyk-3.jpg" alt="" />
+                        </div>
+                        <h3>Český jazyk</h3>
+                        <span>Cena : 4000 Kč</span>
+                        <a href="">Zobrazit</a>
+                    </div>
+                    <div class="back">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti magni dignissimos qui veniam minus recusandae at aliquam fuga necessitatibus, laudantium perferendis corporis vitae, quam quos maiores, cum sit excepturi error.</p>
+                    </div>
+                </div>
             </div>
             <div class="pagination-content">
 

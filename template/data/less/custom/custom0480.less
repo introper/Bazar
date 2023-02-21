@@ -106,23 +106,29 @@ section {}
 }
 
 .content {
-  grid-gap: 20px 20px;
+  max-width: 100%;
+
+  &.author {}
 
   .item {
-    .img {
-      height: 180px;
+    .holder {
+      .img {
+        height: 200px;
 
-      img {}
+        img {}
+      }
 
-      .bg {}
-
-      p {}
+      h3 {}
     }
 
-    .text {
-      h3 {}
+    .bottom {
+      span {
+        font-size: 1.5rem;
+      }
 
-      span {}
+      .full-blue {
+        padding: 5px 20px 5px 20px;
+      }
     }
   }
 }
@@ -156,15 +162,17 @@ section {}
 
   .detail-section {
     .centred {
+      width: 100%;
+      padding: 20px;
+
       .left {
-        max-width: 300px;
+        max-width: 400px;
 
         .detail {
           .swiper-slide {
-            .swiper-div {
-              height: 250px;
 
-              img {}
+            .swiper-div {
+              height: 440px;
             }
           }
         }
@@ -173,9 +181,18 @@ section {}
           .swiper-pagination-bullet {}
         }
 
-        .swiper-button-prev-detail {}
+        .swiper-button-prev-detail {
+          height: 80px;
+          width: 40px;
+          padding: 3px 7px 3px 7px;
+        }
 
-        .swiper-button-next-detail {}
+        .swiper-button-next-detail {
+          height: 80px;
+          width: 40px;
+          padding: 3px 7px 3px 7px;
+        }
+
       }
 
       .right {
@@ -269,7 +286,8 @@ section {}
       margin: AUTO;
 
       .item {
-        .img {    height: 160px;
+        .img {
+          height: 160px;
 
           img {}
 

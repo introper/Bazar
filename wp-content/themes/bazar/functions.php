@@ -90,3 +90,38 @@ function codex_taxonomy_kniha()
 add_action('init', 'codex_taxonomy_kniha', 0);
 
 add_theme_support('post-thumbnails', array('kniha', "post"));
+
+
+add_action('wp', 'delete_expired_coupons_daily');
+function delete_expired_coupons_daily()
+{
+    if (!wp_next_scheduled('delete_expired_coupons')) {
+        wp_schedule_event(time(), 'daily', 'delete_expired_coupons');
+    }
+}
+add_action('delete_expired_coupons', 'delete_expired_coupons_callback');
+function delete_expired_coupons_callback()
+{
+    $args = array(
+        'post_type' => 'kniha',
+        'posts_per_page' => -1
+    );
+
+    $coupons = new WP_Query($args);
+    if ($coupons->have_posts()) :
+        while ($coupons->have_posts()) : $coupons->the_post();
+            // get the post publish date  
+            $test = get_the_date();
+            // convert it to strto 
+            $converter = strtotime($test);
+            // add 3 months to it
+            $deletedate = date(strtotime("+3 month", $converter));
+            // check if today is more than 3 months of publish date
+            if (time() > $deletedate) {
+                wp_delete_post(get_the_ID());
+                //Use wp_delete_post(get_the_ID(),true) to delete the post from the trash too.                  
+            }
+
+        endwhile;
+    endif;
+}

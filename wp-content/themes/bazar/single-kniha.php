@@ -34,8 +34,16 @@ $authord = get_the_author_meta('user_email', $author_id);
 
                     </div>
                     <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev swiper-button-prev-detail"></div>
-                    <div class="swiper-button-next swiper-button-next-detail"></div>
+                    <div class="swiper-button-prev swiper-button-prev-detail">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="94" viewBox="0 0 56 94">
+                            <path id="swiper-arrow-left" d="M47,0,94,56,47,12.551,0,56Z" transform="translate(0 94) rotate(-90)" fill="#fff" />
+                        </svg>
+                    </div>
+                    <div class="swiper-button-next swiper-button-next-detail">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="94" viewBox="0 0 56 94">
+                            <path id="swiper-arrow" d="M47,0,94,56,47,12.551,0,56Z" transform="translate(56) rotate(90)" fill="#fff" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="right">
 

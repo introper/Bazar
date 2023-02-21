@@ -37,9 +37,11 @@ include("data-ajax.php"); ?>
                     <div class="hamburger-2">
                         <span>menu</span>
                     </div>
-                    <a href="template-main.php" class="logo">
-                        <img src="<?php echo home_url(); ?>/template/data/images/logo-black.svg" alt="Nazdar Bazar" />
-                        <img class="small" src="<?php echo home_url(); ?>/template/dat/images/logo-small-black.svg" alt="Nazdar Bazar" />
+                    <a href="<?php echo home_url(); ?>" class="logo">
+                    <?php $logo_small = get_field("logo", "options"); ?>
+                    <?php $logo_full = get_field("logo_cele", "options"); ?>
+                        <img src="<?php echo $logo_full["url"] ?>" alt="Nazdar Bazar" />
+                        <img class="small" src="<?php echo $logo_small["url"] ?>" alt="Nazdar Bazar" />
                     </a>
                     <div class="search" id="search-icon">
 
@@ -55,6 +57,7 @@ include("data-ajax.php"); ?>
                     <div></div>
                 </div>
                 <ul>
+                <li><a href="<?php echo home_url(); ?>">Hlavní stránka</a></li>
                     <?php if (is_user_logged_in()) { ?>
                         <?php $currentUser = wp_get_current_user(); ?>
                         <li><a href="<?php echo get_author_posts_url($currentUser->ID); ?>">Položky</a></li>

@@ -210,7 +210,7 @@ jQuery(document).ready(function ($) {
     var value = $(this).find('a').attr("data-slug");
     var id = $(this).attr("id");
     var text = $(this).find('a').text();
-    
+
     var dropdown = $(this).closest(".dropdown");
     var activeSelect = dropdown.find('.active-select a');
 
@@ -219,6 +219,17 @@ jQuery(document).ready(function ($) {
     select.val(value).change();
   });
 
+  $(document).on("click", "a", function (e) {
+    var href = $(this).attr("href");
+    if (href.length > 2) {
+      var element = $(document).find(".modal" + href);
+      if (element.length > 0 && element.hasClass("modal")) {
+        e.preventDefault();
+        element.addClass("active");
+        $("html").addClass("active");
+      }
+    }
+  });
   $(document).on("click", "#filter", function (e) {
     e.preventDefault();
     $(document).find(".filtering").addClass("active");
@@ -334,14 +345,7 @@ jQuery(document).ready(function ($) {
       }
     });
   });
-  $(document).on("click", ".bg", function (e) {
-    e.preventDefault();
-    $(".header nav").removeClass("active");
-    $(document).find(".filtering").toggleClass("active");
-    $(".header .bg").removeClass("active");
-    // $("html").removeClass("active");
-    $(".header .hamburger").toggleClass("active");
-  });
+
   $(document).on("click", ".hamburger", function (e) {
     e.preventDefault();
     $(this).toggleClass("active");
@@ -350,7 +354,13 @@ jQuery(document).ready(function ($) {
     // $("html").toggleClass("active");
   });
 
-
+  $(document).on("click", ".item .holder .settings-btn", function (e) {
+    e.preventDefault();
+    var item = $(this).closest(".item");
+    var settings = item.find(".settings-page");
+    settings.toggleClass("active");
+    // $("html").toggleClass("active");
+  });
 
 
   function initFileUploadForm() {
