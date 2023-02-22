@@ -22,7 +22,7 @@ if (!is_user_logged_in()) :
             "user_email" => $email,
             "first_name" => $firstName,
             "last_name" => $lastName,
-            "role" => "subscriber"
+            "role" => "customer"
         );
 
         $newUser = wp_insert_user($newUserArg);

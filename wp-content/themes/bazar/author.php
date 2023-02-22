@@ -69,72 +69,56 @@ $userObject = get_queried_object();
                                 </div>
                                 <div class="holder">
                                     <a href="#" class="edit-btn btn border-white" data-target="<?php echo $post->post_name; ?>"><?php echo _e("Upravit", "Bazar-1"); ?></a>
-                                    <a href="#" class="delete btn full-red" data-target="<?php echo $post->post_name; ?>"><?php echo _e("Smazat", "Bazar-1"); ?></a>
+                                    <a href="#" class="delete btn full-red delete-post-button" data-target="<?php echo $post->post_name; ?>"><?php echo _e("Smazat", "Bazar-1"); ?></a>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <div class="item">
-                            <?php if (get_the_post_thumbnail_url($post->ID)) : ?>
-                                <div class="img">
-                                    <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo get_the_title($post->ID); ?>" />
-                                    <div class="bg"></div>
-                                    <?php $des = get_field("popisek", $post->ID); ?>
-                                    <?php if ($des) : ?>
-                                        <p><?php echo $des; ?></p>
-                                    <?php endif; ?>
-                                </div>
-                            <?php endif; ?>
-
-                            <div class="text">
-                                <h3><?php echo get_the_title($post->ID); ?></h3>
-
-                                <div class="holder">
-                                    <?php $price = get_field("cena", $post->ID); ?>
-                                    <?php if ($price) : ?>
-                                        <span><?php echo $price; ?> Kč</span>
-                                    <?php endif; ?>
-                                    <a href="#" data-target="<?php echo $post->post_name; ?>" class="delete">Smazat</a>
-                                    <a href="#" class="edit-btn" data-target="<?php echo $post->post_name; ?>">Upravit</a>
-                                </div>
-                            </div>
-                        </div> -->
-
                     <?php endwhile; ?>
                     <?php wp_reset_query(); ?>
                 <?php endif; ?>
             </div>
-            <?php if ($query->have_posts()) : ?>
+            <!-- <?php if ($query->have_posts()) : ?>
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
                     <?php
                     $idPost = $post->ID;
                     ?>
-
-
-
-                    <div class="modal modal-delete" id="<?php echo $post->post_name; ?>">
-                        <div class="bg"></div>
-                        <div class="modal-text">
-                            <div class="close" id="close">
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <h3>Přejete si smazt položku <br />
-                                <strong><?php echo get_the_title($post->ID); ?></strong>
-                            </h3>
-
-                            <div class="holder">
-                                <div class="btn full-blue exit">Zpět</div>
-                                <a href="<?php echo get_delete_post_link($post->ID); ?>" class="btn full-red">Smazat</a>
-
-                            </div>
-
+                    <?php if ($post->post_type == 'kniha' && $post->post_author == get_current_user_id()) : ?>
+                        <div class="modal modal-delete" id="<?php echo $post->post_name; ?>">
+                            <div class="bg"></div>
+                            <!-- <div class="modal-text">
+                                <div class="close" id="close">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <h3>Přejete si smazt položku <br />
+                                    <strong><?php echo get_the_title($idPost); ?></strong>
+                                </h3>
+                                <div class="holder">
+                                    <div class="btn full-blue exit">Zpět</div>
+                                    <a href="" class="btn full-red full-delete-post" data-target="<?php echo $idPost; ?>">Smazat</a>
+                                </div>
+                            </div> -->
                         </div>
-                    </div>
-
+                    <?php endif; ?>
                 <?php endwhile; ?>
                 <?php wp_reset_query(); ?>
-            <?php endif; ?>
+            <?php endif; ?> -->
+            <div class="modal modal-delete">
+                <div class="bg"></div>
+                <!-- <div class="modal-text">
+                                <div class="close" id="close">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <h3>Přejete si smazt položku <br />
+                                    <strong><?php echo get_the_title($idPost); ?></strong>
+                                </h3>
+                                <div class="holder">
+                                    <div class="btn full-blue exit">Zpět</div>
+                                    <a href="" class="btn full-red full-delete-post" data-target="<?php echo $idPost; ?>">Smazat</a>
+                                </div>
+                            </div> -->
+            </div>
             <div class="modal modal-add">
                 <div class="bg"></div>
                 <div class="modal-text">
@@ -283,7 +267,7 @@ $userObject = get_queried_object();
                         $name = getFilter(INPUT_POST, "fullname");
                         $price = getFilter(INPUT_POST, "fullprice");
                         $desc = getFilter(INPUT_POST, "description");
-
+                        $title = get_the_title($idPost);
                         if ($desc) :
                             update_post_meta($idPost, "popisek", $desc);
                         endif;
@@ -291,9 +275,13 @@ $userObject = get_queried_object();
                         if ($price) :
                             update_post_meta($idPost, "cena", $price);
                         endif;
-                        if ($name) :
-                            update_post_meta($idPost, "titulek", $name);
-                        endif;
+                        if ($name) {
+                            $my_post = array(
+                                'ID'           => $idPost,
+                                'post_title'   => $name,
+                            );
+                            wp_update_post($my_post);
+                        }
 
                         wp_redirect(get_author_posts_url($userID));
 

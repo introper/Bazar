@@ -257,18 +257,18 @@ jQuery(document).ready(function ($) {
     }
 
   });
-  $(document).on("click", ".delete", function (e) {
-    e.preventDefault();
-    var href = $(this).attr("data-target");
-    if (href.length > 0) {
-      var element = $(document).find(".modal-delete#" + href);
-      if (element.length > 0 && element.hasClass("modal-delete")) {
-        element.addClass("active");
-        $("html").addClass("active");
-      }
-    }
+  // $(document).on("click", ".delete", function (e) {
+  //   e.preventDefault();
+  //   var href = $(this).attr("data-target");
+  //   if (href.length > 0) {
+  //     var element = $(document).find(".modal-delete#" + href);
+  //     if (element.length > 0 && element.hasClass("modal-delete")) {
+  //       element.addClass("active");
+  //       $("html").addClass("active");
+  //     }
+  //   }
 
-  });
+  // });
 
   $(document).on("click", ".add-item", function (e) {
     e.preventDefault();
@@ -418,7 +418,7 @@ jQuery(document).ready(function ($) {
               for (var i = 0; i < files.length; i++) {
                 var file = files[i];
                 if (file.name !== fileName.text()) {
-                  s
+
                   remainingFiles.push(file);
                 }
               }
@@ -515,5 +515,25 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  $(document).on("click", ".full-delete-post", function (e) {
+    e.preventDefault();
+    const id = $(this).attr("data-target");
+    if (id !== "") {
+      $.ajax({
+        type: "POST",
+        url: window.location.href,
+        data: {
+          deletePostID: id
+        },
+        success: function (response) {
+          if (response == "true") {
+            window.location.reload();
+          } else {
+
+          }
+        }
+      })
+    }
+  });
 
 });

@@ -125,3 +125,25 @@ function delete_expired_coupons_callback()
         endwhile;
     endif;
 }
+
+
+// Add custom role "Customer"
+add_role('customer', 'Customer', array(
+    'read' => true, // Can view pages
+    'edit_posts' => true, // Cannot edit pages
+    'publish_posts' => false, // Cannot publish pages
+    'upload_files' => false, // Can upload files
+    'delete_posts' => false,
+    'delete_others_posts' => false,
+    'delete_published_posts' => false,
+    'delete_private_posts' => false,
+));
+
+function restrict_access_to_admin_area() {
+    $user = wp_get_current_user();
+    if ( in_array( 'customer', (array) $user->roles ) ) {
+        wp_redirect( home_url() );
+        exit;
+    }
+}
+add_action( 'admin_init', 'restrict_access_to_admin_area' );

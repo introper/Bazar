@@ -30,3 +30,25 @@ if ($setCategory) :
 else :
     echo "";
 endif;
+
+
+
+$deletePostID = getFilter(INPUT_POST, "deletePostID") !== null ? getFilter(INPUT_POST, "deletePostID") : null;
+
+if ($deletePostID) :
+    $checkPost = get_post($deletePostID);
+    if ($checkPost) :
+        $checkDelete = wp_delete_post($checkPost->ID);
+        if ($checkDelete) :
+            echo "true";
+        else :
+            echo "Příspěvek nebyl vymazán";
+        endif;
+    else :
+        echo "Neexistující příspěvek";
+    endif;
+    die();
+else :
+    echo "";
+endif;
+
