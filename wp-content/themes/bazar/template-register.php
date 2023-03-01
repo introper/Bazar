@@ -78,32 +78,32 @@ if (!is_user_logged_in()) :
                 <form method="POST" id="registration-form" name="POST" class="register">
                     <h2>Registrovat</h2>
                     <div class="wrapper">
-                        <input type="text" name="firstname" id="firstname" placeholder="Křestní jméno">
-                        <label for="firstname"></label>
+                        <input type="text" name="firstname" id="firstname">
+                        <label for="firstname" class="inner">Křestní jméno</label>
                     </div>
 
                     <div class="wrapper">
-                        <input type="text" name="lastname" id="lastname" placeholder="Příjmení">
-                        <label for="lastname"></label>
+                        <input type="text" name="lastname" id="lastname">
+                        <label for="lastname"  class="inner">Příjmení</label>
                     </div>
 
                     <div class="wrapper">
-                        <input type="email" name="email" id="email" placeholder="E-mail">
-                        <label for="email"></label>
+                        <input type="email" name="email" id="email">
+                        <label for="email"  class="inner">E-mail</label>
                     </div>
 
                     <div class="wrapper">
-                        <input type="password" name="password" id="password" placeholder="Heslo">
-                        <label for="password"></label>
+                        <input type="password" name="password" id="password">
+                        <label for="password"  class="inner">Heslo</label>
                     </div>
 
                     <div class="wrapper">
-                        <input type="password" name="password2" id="password2" placeholder="Ověření hesla">
-                        <label for="password2"></label>
+                        <input type="password" name="password2" id="password2">
+                        <label for="password2"  class="inner">Ověření hesla</label>
                     </div>
 
                     <div class="wrapper">
-                        <button type="submit" class="btn full-green">Registrovat</button>
+                        <button type="submit" class="btn full-blue">Registrovat</button>
                     </div>
 
                 </form>

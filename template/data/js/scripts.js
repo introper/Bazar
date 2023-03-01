@@ -257,18 +257,18 @@ jQuery(document).ready(function ($) {
     }
 
   });
-  // $(document).on("click", ".delete", function (e) {
-  //   e.preventDefault();
-  //   var href = $(this).attr("data-target");
-  //   if (href.length > 0) {
-  //     var element = $(document).find(".modal-delete#" + href);
-  //     if (element.length > 0 && element.hasClass("modal-delete")) {
-  //       element.addClass("active");
-  //       $("html").addClass("active");
-  //     }
-  //   }
+  $(document).on("click", ".delete", function (e) {
+    e.preventDefault();
+    var href = $(this).attr("data-target");
+    if (href.length > 0) {
+      var element = $(document).find(".modal-delete#" + href);
+      if (element.length > 0 && element.hasClass("modal-delete")) {
+        element.addClass("active");
+        $("html").addClass("active");
+      }
+    }
 
-  // });
+  });
 
   $(document).on("click", ".add-item", function (e) {
     e.preventDefault();

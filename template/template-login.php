@@ -2,15 +2,17 @@
 <main role="main" class="main">
     <section class="login-section">
         <div class="container">
-
             <form action="#" method="POST" class="login">
                 <h2>Přihlásit</h2>
-
-                <input type="email" name="login-email" id="email" placeholder="E-mail">
-                <input type="password" name="login-password" id="login-password" placeholder="Heslo">
-
-                <button class="btn full-green">Přihlásit</button>
-
+                <div class="form-holder">
+                    <input type="email" name="login-email" id="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-holder">
+                    <input type="password" name="login-password" id="login-password">
+                    <label for="login-password">Heslo</label>
+                </div>
+                <button class="btn full-blue">Přihlásit</button>
             </form>
         </div>
     </section>

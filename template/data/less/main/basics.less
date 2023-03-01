@@ -1296,8 +1296,9 @@ section {
 }
 
 .main {
-    margin-top: 100px;
-min-height: 90vh;
+    margin-top: 130px;
+    min-height: 90vh;
+
     .main-section {
         margin-bottom: 100px;
         margin-top: 70px;
@@ -1923,7 +1924,7 @@ min-height: 90vh;
             align-items: center;
             border: 1px solid @grey-3;
             border-radius: 6px;
-            background-color: @grey-1;
+            background-color: @white;
             padding: 40px;
 
             .wrapper {
@@ -1933,19 +1934,72 @@ min-height: 90vh;
                 flex-wrap: nowrap;
                 align-items: center;
                 min-height: 100px;
+                position: relative;
+
+                .inner {
+                    .t(0.2s);
+                    .font-roboto-medium();
+                    font-size: 1.5rem;
+                    line-height: 1.46em;
+                    color: @purple-3;
+                    position: absolute;
+                    top: 18px;
+                    left: 15px;
+
+                    &.active {
+                        font-size: 1.2rem;
+                        top: 5px;
+                        left: 15px;
+                    }
+                }
+
 
                 input {
-                    .font-roboto-regular();
-                    font-size: 1.6rem;
-                    line-height: 1em;
-                    padding: 10px 20px 10px 20px;
-                    border-radius: 6px;
-                    border: 1px solid @grey-4;
-                    background-color: @grey-4;
-                    color: @black;
+                    .font-roboto-medium();
+                    font-size: 1.5rem;
+                    line-height: 1.46em;
+                    color: @purple-3;
+                    padding: 20px 15px 5px 15px;
+                    border: 1px solid @blue-6;
+                    background-color: @blue-bg;
+                    border-radius: 4px;
+                    resize: none;
                     width: 100%;
-                    display: block;
-                    margin-bottom: 10px;
+                    position: relative;
+
+                    &+label {
+                        &.inner {
+                            .t(0.2s);
+                            .font-roboto-medium();
+                            font-size: 1.5rem;
+                            line-height: 1.46em;
+                            color: @purple-3;
+                            position: absolute;
+                            top: 18px;
+                            left: 15px;
+
+                            &.active {
+                                font-size: 1.2rem;
+                                top: 5px;
+                                left: 15px;
+                            }
+                        }
+
+                    }
+
+                    &:focus {
+                        .t(0.2s);
+
+                        &+label {
+
+                            .t(0.2s);
+                            font-size: 1.2rem;
+                            top: 5px;
+                            left: 15px;
+
+                        }
+                    }
+
 
                     &.error {
                         color: @red-4;
@@ -1985,21 +2039,54 @@ min-height: 90vh;
             align-items: center;
             border: 1px solid @grey-3;
             border-radius: 6px;
-            background-color: @grey-1;
-            padding: 40px;
+            background-color: @white;
+            padding: 40px 60px;
+
+            .form-holder {
+                position: relative;
+                width: 100%
+            }
 
             input {
-                .font-roboto-regular();
-                font-size: 1.6rem;
-                line-height: 1em;
-                padding: 10px 20px 10px 20px;
-                border-radius: 6px;
-                border: 1px solid @grey-4;
-                background-color: @grey-4;
-                color: @black;
+                .font-roboto-medium();
+                font-size: 1.5rem;
+                line-height: 1.46em;
+                color: @purple-3;
+                padding: 20px 15px 5px 15px;
+                border: 1px solid @blue-6;
+                background-color: @blue-bg;
+                border-radius: 4px;
+                resize: none;
                 width: 100%;
-                display: block;
-                margin-bottom: 10px;
+                position: relative;
+
+                &+label {
+                    .t(0.2s);
+                    .font-roboto-medium();
+                    font-size: 1.5rem;
+                    line-height: 1.46em;
+                    color: @purple-3;
+                    position: absolute;
+                    top: 18px;
+                    left: 15px;
+
+                    &.active {
+                        font-size: 1.2rem;
+                        top: 5px;
+                        left: 15px;
+                    }
+                }
+
+                &:focus {
+                    .t(0.2s);
+
+                    &+label {
+                        .t(0.2s);
+                        font-size: 1.2rem;
+                        top: 5px;
+                        left: 15px;
+                    }
+                }
             }
 
             .full-green {}

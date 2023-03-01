@@ -77,7 +77,7 @@ $userObject = get_queried_object();
                     <?php wp_reset_query(); ?>
                 <?php endif; ?>
             </div>
-            <!-- <?php if ($query->have_posts()) : ?>
+            <?php if ($query->have_posts()) : ?>
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
                     <?php
                     $idPost = $post->ID;
@@ -85,7 +85,7 @@ $userObject = get_queried_object();
                     <?php if ($post->post_type == 'kniha' && $post->post_author == get_current_user_id()) : ?>
                         <div class="modal modal-delete" id="<?php echo $post->post_name; ?>">
                             <div class="bg"></div>
-                            <!-- <div class="modal-text">
+                            <div class="modal-text">
                                 <div class="close" id="close">
                                     <div></div>
                                     <div></div>
@@ -97,12 +97,12 @@ $userObject = get_queried_object();
                                     <div class="btn full-blue exit">Zpět</div>
                                     <a href="" class="btn full-red full-delete-post" data-target="<?php echo $idPost; ?>">Smazat</a>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     <?php endif; ?>
                 <?php endwhile; ?>
                 <?php wp_reset_query(); ?>
-            <?php endif; ?> -->
+            <?php endif; ?>
             <div class="modal modal-delete">
                 <div class="bg"></div>
                 <!-- <div class="modal-text">
