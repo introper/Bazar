@@ -65,7 +65,6 @@ $authord = get_the_author_meta('user_email', $author_id);
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 </main>

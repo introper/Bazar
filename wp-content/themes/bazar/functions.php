@@ -92,39 +92,22 @@ add_action('init', 'codex_taxonomy_kniha', 0);
 add_theme_support('post-thumbnails', array('kniha', "post"));
 
 
-add_action('wp', 'delete_expired_coupons_daily');
-function delete_expired_coupons_daily()
+function move_posts_to_trash()
 {
-    if (!wp_next_scheduled('delete_expired_coupons')) {
-        wp_schedule_event(time(), 'daily', 'delete_expired_coupons');
+    global $wpdb;
+    $post_type = 'kniha';
+    $date = date('Y-m-d', strtotime('-3 months'));
+    $posts = $wpdb->get_results(
+        "SELECT * FROM $wpdb->posts
+        WHERE post_type = '$post_type'
+        AND post_status = 'publish'
+        AND post_date <= '$date'"
+    );
+    foreach ($posts as $post) {
+        wp_trash_post($post->ID);
     }
 }
-add_action('delete_expired_coupons', 'delete_expired_coupons_callback');
-function delete_expired_coupons_callback()
-{
-    $args = array(
-        'post_type' => 'kniha',
-        'posts_per_page' => -1
-    );
-
-    $coupons = new WP_Query($args);
-    if ($coupons->have_posts()) :
-        while ($coupons->have_posts()) : $coupons->the_post();
-            // get the post publish date  
-            $test = get_the_date();
-            // convert it to strto 
-            $converter = strtotime($test);
-            // add 3 months to it
-            $deletedate = date(strtotime("+3 month", $converter));
-            // check if today is more than 3 months of publish date
-            if (time() > $deletedate) {
-                wp_delete_post(get_the_ID());
-                //Use wp_delete_post(get_the_ID(),true) to delete the post from the trash too.                  
-            }
-
-        endwhile;
-    endif;
-}
+add_action('wp', 'move_posts_to_trash');
 
 
 // Add custom role "Customer"
@@ -139,11 +122,12 @@ add_role('customer', 'Customer', array(
     'delete_private_posts' => false,
 ));
 
-function restrict_access_to_admin_area() {
+function restrict_access_to_admin_area()
+{
     $user = wp_get_current_user();
-    if ( in_array( 'customer', (array) $user->roles ) ) {
-        wp_redirect( home_url() );
+    if (in_array('customer', (array) $user->roles)) {
+        wp_redirect(home_url());
         exit;
     }
 }
-add_action( 'admin_init', 'restrict_access_to_admin_area' );
+add_action('admin_init', 'restrict_access_to_admin_area');
