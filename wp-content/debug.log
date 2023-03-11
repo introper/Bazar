@@ -17,3 +17,10 @@
 [02-Mar-2023 23:58:18 UTC] PHP Warning:  Undefined array key "message" in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\single-kniha.php on line 66
 [02-Mar-2023 23:58:19 UTC] PHP Warning:  Undefined array key "email" in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\single-kniha.php on line 65
 [02-Mar-2023 23:58:19 UTC] PHP Warning:  Undefined array key "message" in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\single-kniha.php on line 66
+[10-Mar-2023 11:40:04 UTC] PHP Warning:  Undefined variable $subcategory in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\template-main.php on line 18
+[10-Mar-2023 11:40:08 UTC] PHP Warning:  Undefined variable $subcategory in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\template-main.php on line 18
+[10-Mar-2023 11:40:13 UTC] PHP Warning:  Undefined variable $subcategory in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\template-main.php on line 18
+[10-Mar-2023 11:48:35 UTC] PHP Warning:  Undefined variable $reference_category in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\template-main.php on line 21
+[10-Mar-2023 11:48:37 UTC] PHP Warning:  Undefined variable $reference_category in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\template-main.php on line 21
+[10-Mar-2023 11:50:01 UTC] PHP Warning:  Undefined variable $reference_category in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\template-main.php on line 21
+[10-Mar-2023 11:50:10 UTC] PHP Warning:  Undefined variable $reference_category in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\template-main.php on line 21

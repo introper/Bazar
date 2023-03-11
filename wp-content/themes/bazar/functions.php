@@ -131,3 +131,33 @@ function restrict_access_to_admin_area()
     }
 }
 add_action('admin_init', 'restrict_access_to_admin_area');
+
+add_action('phpmailer_init', 'my_phpmailer_smtp');
+function my_phpmailer_smtp($phpmailer)
+{
+    $phpmailer->isSMTP();
+    $phpmailer->SMTPAuth = SMTP_AUTH;
+    $phpmailer->Port = SMTP_PORT;
+    $phpmailer->Username = SMTP_USER;
+    $phpmailer->Password = SMTP_PASS;
+    $phpmailer->SMTPSecure = SMTP_SECURE;
+    $phpmailer->From = SMTP_FROM;
+    $phpmailer->FromName = SMTP_NAME;
+}
+
+
+function send_email_by_mailtrap_finish($test)
+{
+    $email = 'michalhasic03@seznam.cz';
+    $title = sprintf(
+        __('Test "%s" finished', 'Mailtrap'),
+        $test->post_title
+    );
+    $body = '...';
+    $content_type = function () {
+        return 'text/html';
+    };
+    add_filter('wp_mail_content_type', $content_type);
+    wp_mail($email, $title, $body);
+    remove_filter('wp_mail_content_type', $content_type);
+}

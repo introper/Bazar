@@ -56,103 +56,75 @@ $total_posts = $query->found_posts;
                 <div class="bg">
                 </div>
                 <div class="yes"></div>
-                <form action="<?php echo home_url(); ?>" method="GET" class="filter-form">
+                <form action="<?php echo esc_url(get_permalink()); ?>" method="GET" class="filter-form">
                     <div class="part">
-                        <h3>Ročník</h3>
+                        <h3><?php echo _e("Kategorie", "Bazar-1"); ?></h3>
+                        <?php
+                        // Check if the form was submitted and the subcategory parameter is set
+                        if (isset($_GET['subcategory'])) {
+                            // Retrieve the selected subcategories
+                            $subcategories = $_GET['subcategory'];
+
+                            // Retrieve the posts that belong to the selected subcategories
+                            $args = array(
+                                'post_type' => 'kniha',
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'product_category',
+                                        'field' => 'name',
+                                        'terms' => $subcategories,
+                                    ),
+                                ),
+                            );
+                            $query = new WP_Query($args);
+                        }
+                        ?>
                         <?php $terms = get_terms(array("taxonomy" => "product_category", "parent" => 0, "hide_empty" => false)); ?>
                         <?php if ($terms) : ?>
-                            <ul class="checkbox-block">
-                                <?php foreach ($terms as $key => $item) : ?>
+                            <?php foreach ($terms as $key => $item) : ?>
+                                <ul class="checkbox-block">
+
                                     <li>
-                                        <input value="main-cat" type="checkbox" name="Subcategory" id="Subcategory-1">
-                                        <label for="Subcategory-1"><span>Podkategória</span><span class="arrow-fil"></span></label>
+                                        <input value="<?php echo $item->name; ?>" type="checkbox" name="Subcategory" id="<?php echo $item->name; ?>">
+                                        <label for="<?php echo $item->name; ?>"><span><?php echo $item->name; ?></span><span class="arrow-fil"></span></label>
                                         <?php $subTerms = get_terms(array("taxonomy" => "product_category", "parent" => $item->term_id, "hide_empty" => false)); ?>
                                         <?php if ($subTerms) : ?>
                                             <ul class="children">
                                                 <?php foreach ($subTerms as $row) : ?>
                                                     <li class="checkbox-holder">
-                                                        <input value="<?php echo $row->name; ?>" type="checkbox" name="subcategory" id="Subcategory-1.1">
-                                                        <label for="Subcategory-1.1"><span>Podkategória</span></label>
+                                                        <input value="<?php echo $row->name; ?>" type="checkbox" name="subcategory[]" id="<?php echo $row->name; ?>">
+                                                        <label for="<?php echo $row->name; ?>"><span><?php echo $row->name; ?></span></label>
                                                     </li>
                                                 <?php endforeach; ?>
-                                                <li class="checkbox-holder">
-                                                    <input value="subcategory-2" type="checkbox" name="subcategory" id="Subcategory-1.2">
-                                                    <label for="Subcategory-1.2"><span>Podkategória</span></label>
-                                                </li>
-                                                <li class="checkbox-holder">
-                                                    <input value="subcategory-3" type="checkbox" name="subcategory" id="Subcategory-1.3">
-                                                    <label for="Subcategory-1.3"><span>Podkategória</span></label>
-                                                </li>
                                             </ul>
                                         <?php endif; ?>
                                     </li>
-                                <?php endforeach; ?>
-                            </ul>
+
+                                </ul>
+                            <?php endforeach; ?>
                         <?php endif; ?>
-                        <ul class="checkbox-block">
-                            <li>
-                                <input value="main-cat" type="checkbox" name="Subcategory" id="Subcategory-2">
-                                <label for="Subcategory-2"><span>Podkategória</span><span class="arrow-fil"></span></label>
-                                <ul class="children">
-                                    <li class="checkbox-holder">
-                                        <input value="subcategory-1" type="checkbox" name="Subcategory" id="Subcategory-2.1">
-                                        <label for="Subcategory-2.1"><span>Podkategória</span></label>
-                                    </li>
-                                    <li class="checkbox-holder">
-                                        <input value="subcategory-2" type="checkbox" name="Subcategory" id="Subcategory-2.2">
-                                        <label for="Subcategory-2.2"><span>Podkategória</span></label>
-                                    </li>
-                                    <li class="checkbox-holder">
-                                        <input value="subcategory-3" type="checkbox" name="Subcategory" id="Subcategory-2.3">
-                                        <label for="Subcategory-2.3"><span>Podkategória</span></label>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul class="checkbox-block">
-                            <li>
-                                <input value="main-cat" type="checkbox" name="Subcategory" id="Subcategory-3">
-                                <label for="Subcategory-3"><span>Podkategória</span><span class="arrow-fil"></span></label>
-                                <ul class="children">
-                                    <li class="checkbox-holder">
-                                        <input value="subcategory-1" type="checkbox" name="Subcategory" id="Subcategory-3.1">
-                                        <label for="Subcategory-3.1"><span>Podkategória</span></label>
-                                    </li>
-                                    <li class="checkbox-holder">
-                                        <input value="subcategory-2" type="checkbox" name="Subcategory" id="Subcategory-3.2">
-                                        <label for="Subcategory-3.2"><span>Podkategória</span></label>
-                                    </li>
-                                    <li class="checkbox-holder">
-                                        <input value="subcategory-3" type="checkbox" name="Subcategory" id="Subcategory-3.3">
-                                        <label for="Subcategory-3.3"><span>Podkategória</span></label>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+
                     </div>
-                    <div class="part">
+                    <!-- <div class="part">
                         <h3>Cena od do</h3>
                         <div class="slide-part">
                             <div id="slider-range" class="price-filter-range" name="rangeInput"></div>
-                            <!-- <label for="min_price" class="slider-label">Od:</label> -->
                             <div class="wrapper">
                                 <input type="number" min=0 id="min_price" name="min_price" class="price-range-field" />
                                 <input type="hidden" min=0 id="min_price_hidden" name="min_price" class="price-range-field" />
-
                                 <span>Kč</span>
                             </div>
-                            <!-- <label for="max_price" class="slider-label">Do:</label> -->
                             <div class="wrapper">
                                 <input type="number" min=0 id="max_price" name="max_price" class="price-range-field" />
                                 <input type="hidden" min=0 id="max_price_hidden" name="max_price" class="price-range-field" />
-
                                 <span>Kč</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="part">
                         <button href="" class="btn full-blue">Vyhledat</button>
                     </div>
+                    <input type="hidden" name="page_id" value="<?php echo get_the_ID(); ?>">
                 </form>
             </div>
             <div class="sorting">
@@ -209,7 +181,7 @@ $total_posts = $query->found_posts;
 
                 <?php if ($query->have_posts()) : ?>
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
-                        <div href="<?php echo get_the_permalink($post->ID); ?>" class="item">
+                        <div class="item">
                             <div class="holder">
                                 <?php if (get_the_post_thumbnail_url($post->ID)) : ?>
                                     <div class="img">

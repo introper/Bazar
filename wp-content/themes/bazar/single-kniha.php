@@ -1,5 +1,5 @@
 <?php
-/*Template name: detail */
+
 
 get_header();
 
@@ -8,6 +8,7 @@ $ID = get_queried_object_id();
 
 $author_id = $post->post_author;
 $authord = get_the_author_meta('user_email', $author_id);
+
 ?>
 <main role="main" class="main">
     <section class="detail-section">
@@ -62,6 +63,8 @@ $authord = get_the_author_meta('user_email', $author_id);
                         <span>Kontakt na majitele:</span>
 
                         <a href="mailTo:<?php echo ($authord) ?>" class="email"><?php echo ($authord) ?></a>
+
+
                     </div>
                 </div>
             </div>
