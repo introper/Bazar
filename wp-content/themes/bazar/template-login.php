@@ -57,13 +57,18 @@ if (!is_user_logged_in()) :
                 <form action="#" method="POST" class="login">
                     <h2>Přihlásit</h2>
                     <div class="form-holder">
-                        <input type="email" name="login-email" id="email">
+                        <input type="email" name="login-email" id="email" required>
                         <label for="email">Email</label>
                     </div>
                     <div class="form-holder">
-                        <input type="password" name="login-password" id="login-password">
+                        <input type="password" name="login-password" id="login-password" required>
                         <label for="login-password">Heslo</label>
                     </div>
+                    <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') : ?>
+                        <div class="errorblock">
+                            <?php echo $emailErrorMessage; ?>
+                        </div>
+                    <?php endif; ?>
                     <button class="btn full-blue">Přihlásit</button>
                 </form>
             </div>
