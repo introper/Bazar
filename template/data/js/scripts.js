@@ -535,5 +535,4 @@ jQuery(document).ready(function ($) {
       })
     }
   });
-
 });

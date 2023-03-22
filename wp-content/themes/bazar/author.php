@@ -185,16 +185,18 @@ $userObject = get_queried_object();
                         ?>
                     <?php endif; ?>
                     <h3>Vytvořit položku</h3>
-                    <form action="<?php echo get_author_posts_url($ID); ?>" class="form-review" method="POST" enctype="multipart/form-data">
+                    <form action="<?php echo get_author_posts_url($ID); ?>" class="form-review" method="POST" enctype="multipart/form-data" id="ceate-post">
                         <div class="upper">
                             <div class="left">
                                 <div class="form-holder">
-                                    <input type="text" name="fullname" id="name" />
+                                    <input type="text" name="fullname" id="name" required />
                                     <label for="name">Název</label>
+                                    <span class="error"></span>
                                 </div>
                                 <div class="form-holder">
-                                    <input type="number" name="fullprice" id="price" />
+                                    <input type="number" name="fullprice" id="price" required />
                                     <label for="price">cena</label>
+                                    <span class="error"></span>
                                 </div>
                                 <div class="form-holder drop">
                                     <?php $terms = get_terms(array("taxonomy" => "product_category", "parent" => 0, "hide_empty" => false)); ?>
@@ -228,8 +230,9 @@ $userObject = get_queried_object();
                             </div>
                             <div class=" right">
                                 <div class="form-holder">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="service"></textarea>
+                                    <textarea required name="description" id="description" cols="30" rows="10" class="service"></textarea>
                                     <label for="description">Popis</label>
+                                    <span class="error"></span>
                                 </div>
                             </div>
                         </div>
@@ -238,7 +241,7 @@ $userObject = get_queried_object();
                             <div class="file-upload">
                                 <div class="upload-field">
                                     <div class="fake-button" id="drop-zone">Vyberte soubor</div>
-                                    <input type="file" class="file-upload-field" id="fileInput" name="files[]" multiple="multiple" />
+                                    <input type="file" class="file-upload-field" id="fileInput" name="files[]" multiple="multiple" required />
                                 </div>
                                 <div id="fileList" class="file-upload-items"></div>
                                 <div id="error" class="error"></div>
