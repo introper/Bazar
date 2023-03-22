@@ -24,7 +24,6 @@ if ($setCategory) :
             </select>
         </div>
 <?php
-
         die();
     endif;
 else :
@@ -51,4 +50,3 @@ if ($deletePostID) :
 else :
     echo "";
 endif;
-

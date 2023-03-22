@@ -40,20 +40,15 @@ $userObject = get_queried_object();
                                         </g>
                                     </svg>
                                 </div>
-
                                 <?php if (get_the_post_thumbnail_url($post->ID)) : ?>
                                     <div class="img">
                                         <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo get_the_title($post->ID); ?>" />
                                     </div>
                                 <?php endif; ?>
-
                                 <h3><?php echo get_the_title($post->ID); ?></h3>
                                 <?php $price = get_field("cena", $post->ID); ?>
-
                             </div>
-
                             <div class="bottom">
-
                                 <?php if ($price) : ?>
                                     <span><strong><?php echo _e("Cena:", "Bazar-1"); ?></strong> <?php echo $price; ?> Kč</span>
                                 <?php endif; ?>
@@ -268,12 +263,9 @@ $userObject = get_queried_object();
                         $price = getFilter(INPUT_POST, "fullprice");
                         $desc = getFilter(INPUT_POST, "description");
                         $title = get_the_title($idPost);
-                        if ($desc) :
-                            update_post_meta($idPost, "popisek", $desc);
+                        if ($desc) : update_post_meta($idPost, "popisek", $desc);
                         endif;
-
-                        if ($price) :
-                            update_post_meta($idPost, "cena", $price);
+                        if ($price) : update_post_meta($idPost, "cena", $price);
                         endif;
                         if ($name) {
                             $my_post = array(

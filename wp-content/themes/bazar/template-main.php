@@ -28,16 +28,8 @@ if ($priceOrder) :
     $arg['meta_key'] = 'cena';
     if ($priceOrder == "higher") :
         $arg["order"] = "DESC";
-    /*$arg["meta_query"] = array(
-            "key" => "cena",
-            "compare" => ">"
-        );*/
     else :
         $arg["order"] = "ASC";
-    /* $arg["meta_query"] = array(
-            "key" => "cena",
-            "compare" => "<"
-        );*/
     endif;
 endif;
 
@@ -188,19 +180,15 @@ $total_posts = $query->found_posts;
                                         <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo get_the_title($post->ID); ?>" />
                                     </div>
                                 <?php endif; ?>
-
                                 <h3><?php echo get_the_title($post->ID); ?></h3>
-                                <?php $price = get_field("cena", $post->ID); ?>
-
                             </div>
-                            <div class="bottom">
+                            <div class="bottom">  
+                                <?php $price = get_field("cena", $post->ID); ?>
                                 <?php if ($price) : ?>
                                     <span><strong><?php echo _e("Cena:", "Bazar-1"); ?></strong> <?php echo $price; ?> Kč</span>
                                 <?php endif; ?>
                                 <a href="<?php echo get_the_permalink($post->ID); ?>" class="btn full-blue"><?php echo _e("zobrazit", "Bazar-1"); ?></a>
-
                             </div>
-
                         </div>
                     <?php endwhile; ?>
                     <?php wp_reset_query(); ?>
@@ -208,7 +196,8 @@ $total_posts = $query->found_posts;
             </div>
             <?php if ($total_pages > 1) : ?>
                 <div class="pagination">
-                    <a href="<?php echo get_pagenum_link($paged - 1); ?>" class="btn border-blue left"><span><?php echo _e("Předchozí strana", "frontio"); ?></span><img src="<?php echo home_url(); ?>/templates/data/images/arrow-left-btn.svg" alt="" /></a>
+                    <a href="<?php echo get_pagenum_link($paged - 1); ?>" class="btn border-blue left"><span><?php echo _e("Předchozí strana", "Bazr-1"); ?>
+                </span><img src="<?php echo home_url(); ?>/templates/data/images/arrow-left-btn.svg" alt="" /></a>
                     <div class="pages">
                         <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
                             <?php if ($i == $paged) : ?>
@@ -218,15 +207,13 @@ $total_posts = $query->found_posts;
                             <?php endif; ?>
                         <?php endfor; ?>
                     </div>
-                    <a href="<?php echo get_pagenum_link($paged + 1); ?>" class="btn border-blue"><span><?php echo _e("Další strana", "frontio"); ?></span><img src="<?php echo home_url(); ?>/templates/data/images/arrow-blue-2.svg" alt="" /></a>
+                    <a href="<?php echo get_pagenum_link($paged + 1); ?>" class="btn border-blue"><span><?php echo _e("Další strana", "Bazr-1"); ?>
+                </span><img src="<?php echo home_url(); ?>/templates/data/images/arrow-blue-2.svg" alt="" /></a>
                 </div>
             <?php endif; ?>
         </div>
     </section>
 </main>
 <?php
-
 get_footer();
-
-
 ?>

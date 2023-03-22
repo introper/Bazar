@@ -378,66 +378,67 @@ jQuery(document).ready(function ($) {
 
     var filesProcessed = {};
     // funkce na drag and drop
-    $('#fileInput').bind('drop', function (e) {
-      e.preventDefault();
-      // získání souboru který byl přidán
-      var files = e.originalEvent.dataTransfer.files;
-      // zjistí počet přidaných souborů
-      var count = $(".thumbnail-container").length;
-      // pokud je počet přidaných souborů vyšší než danné číslo, tak vypíše error
-      if (files.length + count > 5) {
-        $("#error").text("Můžete nahrát maximálně 5 souborů");
-        return;
-      }
-      for (var i = 0; i < files.length; i++) {
-        var file = files[i];
-        // zkontroluje jestli se jedná o obrázek a jestli nebyl už přidán
-        if (file.type.match(/image\/*/) && !filesProcessed[file.name]) {
-          filesProcessed[file.name] = true;
-          // přečte název souboru jako jeho url
-          var reader = new FileReader();
-          reader.onload = function (e) {
-            // Create a thumbnail preview
-            var id = 1;
-            var thumbnail = $('<img>').attr('src', e.target.result).attr('alt', 'Thumbnail Preview').attr('id', '' + id);
-            id++;
-            // vytvoří se jméno osuboru
-            var fileName = $('<div>').text(file.name).addClass('file-name');
+    // $('#fileInput').bind('drop', function (e) {
+    //   e.preventDefault();
+    //   // získání souboru který byl přidán
+    //   var files = e.originalEvent.dataTransfer.files;
+    //   // zjistí počet přidaných souborů
+    //   var count = $(".thumbnail-container").length;
+    //   // pokud je počet přidaných souborů vyšší než danné číslo, tak vypíše error
+    //   if (files.length + count > 5) {
+    //     $("#error").text("Můžete nahrát maximálně 5 souborů");
+    //     return;
+    //   }
+    //   for (var i = 0; i < files.length; i++) {
+    //     var file = files[i];
+    //     // zkontroluje jestli se jedná o obrázek a jestli nebyl už přidán
+    //     if (file.type.match(/image\/*/) && !filesProcessed[file.name]) {
+    //       filesProcessed[file.name] = true;
+    //       // přečte název souboru jako jeho url
+    //       var reader = new FileReader();
+    //       reader.onload = function (e) {
+    //         // Create a thumbnail preview
+    //         var id = 1;
+    //         var thumbnail = $('<img>').attr('src', e.target.result).attr('alt', 'Thumbnail Preview').attr('id', '' + id);
+    //         id++;
+    //         // vytvoří se jméno osuboru
+    //         var fileName = $('<div>').text(file.name).addClass('file-name');
 
-            var container = $('<div>').addClass('thumbnail-container').append(thumbnail).append(fileName);
-            // tlačítko na oddělání
-            var removeButton = $('<button>').text('').addClass('remove-button');
-            container.append(removeButton);
+    //         var container = $('<div>').addClass('thumbnail-container').append(thumbnail).append(fileName);
+    //         // tlačítko na oddělání
+    //         var removeButton = $('<button>').text('').addClass('remove-button');
+    //         container.append(removeButton);
 
-            // funkce na odstranění souboru
-            removeButton.bind('click', function () {
-              container.remove();
-              var fileInput = $('#fileInput')[0];
-              var files = fileInput.files;
-              var remainingFiles = [];
-              for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-                if (file.name !== fileName.text()) {
+    //         // funkce na odstranění souboru
+    //         removeButton.bind('click', function () {
+    //           container.remove();
+    //           var fileInput = $('#fileInput')[0];
+    //           var files = fileInput.files;
+    //           var remainingFiles = [];
+    //           for (var i = 0; i < files.length; i++) {
+    //             var file = files[i];
+    //             if (file.name !== fileName.text()) {
 
-                  remainingFiles.push(file);
-                }
-              }
-              fileInput.files = remainingFiles;
-            });
-            $('#fileList').append(container);
-          }
-          reader.readAsDataURL(file);
-        } else {
-          $("#error").text("Pouze obrázky jsou povolené");
-        }
-      }
-    });
+    //               remainingFiles.push(file);
+    //             }
+    //           }
+    //           fileInput.files = remainingFiles;
+    //         });
+    //         $('#fileList').append(container);
+    //       }
+    //       reader.readAsDataURL(file);
+    //     } else {
+    //       $("#error").text("Pouze obrázky jsou povolené");
+    //     }
+    //   }
+    // });
 
     //funkce na kliknutí
     $("#fileInput").bind('change', function () {
       var files = this.files;
       var count = $(".thumbnail-container").length;
       //pokud je více než 5 souborů odstraní přebívající
+      var id = count + 1;
       if (files.length + count > 5) {
         $("#error").text("Můžete nahrát maximálně 5 souborů");
         $('#fileInput').val('');
@@ -454,7 +455,6 @@ jQuery(document).ready(function ($) {
           var reader = new FileReader();
           reader.onload = function (e) {
             // Create a thumbnail preview
-            var id = 1;
             var thumbnail = $('<img>').attr('src', e.target.result).attr('alt', 'Thumbnail Preview').attr('id', '' + id);
             id++;
             // vytvoří se jméno osuboru

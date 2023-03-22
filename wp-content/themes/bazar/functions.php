@@ -3,9 +3,7 @@
 if (is_user_logged_in()) {
     show_admin_bar(false);
 }
-
 if (function_exists('acf_add_options_page')) {
-
     acf_add_options_page("Konfigurace");
 }
 
@@ -61,8 +59,7 @@ add_action('init', 'cpt_kniha', 0);
 
 
 function codex_taxonomy_kniha()
-{
-    $labels = array(
+{$labels = array(
         'name'              => _x('Kategorie', 'taxonomy general name', 'textdomain'),
         'singular_name'     => _x('Kategorie', 'taxonomy singular name', 'textdomain'),
         'search_items'      => __('Vyhledat kategorii', 'textdomain'),
@@ -73,54 +70,42 @@ function codex_taxonomy_kniha()
         'update_item'       => __('Upravit kategorii', 'textdomain'),
         'add_new_item'      => __('Přidat kategorii', 'textdomain'),
         'new_item_name'     => __('Nová kategorie', 'textdomain'),
-        'menu_name'         => __('Kategorie', 'textdomain'),
-    );
-
+        'menu_name'         => __('Kategorie', 'textdomain'),);
     $args = array(
         'hierarchical'      => true,
         'labels'            => $labels,
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array('slug' => 'kategorie'),
-    );
-
-    register_taxonomy('product_category', array('kniha'), $args);
-}
+        'rewrite'           => array('slug' => 'kategorie'),);
+    register_taxonomy('product_category', array('kniha'), $args);}
 add_action('init', 'codex_taxonomy_kniha', 0);
-
 add_theme_support('post-thumbnails', array('kniha', "post"));
 
 
 function move_posts_to_trash()
-{
-    global $wpdb;
+{global $wpdb;
     $post_type = 'kniha';
     $date = date('Y-m-d', strtotime('-3 months'));
     $posts = $wpdb->get_results(
         "SELECT * FROM $wpdb->posts
         WHERE post_type = '$post_type'
         AND post_status = 'publish'
-        AND post_date <= '$date'"
-    );
+        AND post_date <= '$date'");
     foreach ($posts as $post) {
-        wp_trash_post($post->ID);
-    }
-}
+        wp_trash_post($post->ID);}}
 add_action('wp', 'move_posts_to_trash');
 
 
-// Add custom role "Customer"
 add_role('customer', 'Customer', array(
-    'read' => true, // Can view pages
-    'edit_posts' => true, // Cannot edit pages
-    'publish_posts' => false, // Cannot publish pages
-    'upload_files' => false, // Can upload files
+    'read' => true,
+    'edit_posts' => true,
+    'publish_posts' => false,
+    'upload_files' => false,
     'delete_posts' => false,
     'delete_others_posts' => false,
     'delete_published_posts' => false,
-    'delete_private_posts' => false,
-));
+    'delete_private_posts' => false,));
 
 function restrict_access_to_admin_area()
 {

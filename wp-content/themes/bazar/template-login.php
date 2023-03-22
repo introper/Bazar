@@ -28,22 +28,14 @@ if (!is_user_logged_in()) :
                         "user_password" => $pass,
                         "remember" => true
                     );
-
                     $login = wp_signon($creds, false);
-
                     if (is_wp_error($login)) :
                         $emailErrorMessage = $login->get_error_message();
                     endif;
-                    // if ($login) :
-                    //     $dashboard = get_field("hlavni_panel", "options");
-                    //     wp_redirect(get_the_permalink($dashboard));
-                    // endif;
-
                     if ($login) :
                         wp_redirect(home_url());
                         exit;
                     endif;
-
                 else :
                     $passwordError = true;
                     $passwordErrorMessage = "Heslo není správné.";
