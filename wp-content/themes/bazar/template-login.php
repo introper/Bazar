@@ -67,6 +67,7 @@ if (!is_user_logged_in()) :
                     <?php if ($_SERVER['REQUEST_METHOD'] == 'POST') : ?>
                         <div class="errorblock">
                             <?php echo $emailErrorMessage; ?>
+                            <?php echo  $passwordErrorMessage; ?>
                         </div>
                     <?php endif; ?>
                     <button class="btn full-blue">Přihlásit</button>
