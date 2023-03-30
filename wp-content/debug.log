@@ -116,3 +116,4 @@ Stack trace:
 [22-Mar-2023 14:25:12 UTC] PHP Warning:  Undefined variable $errorMessage in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\template-login.php on line 69
 [22-Mar-2023 14:25:40 UTC] PHP Warning:  Undefined variable $created in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\template-login.php on line 68
 [22-Mar-2023 14:25:40 UTC] PHP Warning:  Undefined variable $errorMessage in C:\xampp\htdocs\Bazar-1\wp-content\themes\bazar\template-login.php on line 69
+[28-Mar-2023 16:20:02 UTC] PHP Warning:  Attempt to read property "title" on null in C:\xampp\htdocs\Bazar-1\wp-includes\class-wp-customize-widgets.php on line 900
