@@ -60,9 +60,41 @@ $authord = get_the_author_meta('user_email', $author_id);
                         <div class="price"><span>Cena: <strong><?php echo $cena; ?> Kč</strong></span></div>
                     <?php endif; ?>
                     <div class="contact">
-                        <span>Kontakt na majitele:</span>
+                        <span>Kontaktovat majitele:</span>
 
-                        <a href="mailTo:<?php echo ($authord) ?>" class="email"><?php echo ($authord) ?></a>
+                        <!-- <a href="mailTo:<?php echo ($authord) ?>" class="email"><?php echo ($authord) ?></a> -->
+                        <?php if (isset($_POST['submit'])) {
+                            // Sanitize form data
+                            $name    = sanitize_text_field($_POST['name']);
+                            $email   = sanitize_email($_POST['email']);
+                            $message = esc_textarea($_POST['message']);
+
+                            // Set email headers
+                            $headers = array(
+                                'Content-Type: text/html; charset=UTF-8',
+                                'From: ' . $title . ' <' . $email . '>',
+                            );
+
+                            // Send email using wp_mail function
+                            wp_mail($authord, 'nazad bazar', $message, $headers);
+
+
+                            exit;
+                        }
+                        ?>
+                        <form method="post" class="contact-form">
+                            <div class="form-holder"> <label for="name">Jméno</label>
+                                <input type="text" name="name" id="name" />
+                            </div>
+                            <div class="form-holder">
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" id="email" />
+                            </div>
+                            <div class="form-holder"> <label for="message">Zpráva:</label>
+                                <textarea name="message" id="message"></textarea>
+                            </div>
+                            <input type="submit" name="submit" class="btn border-blue" value="Send" />
+                        </form>
 
 
                     </div>

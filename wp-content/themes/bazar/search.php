@@ -19,7 +19,7 @@ $query = new WP_Query($arg);
 <main role="main" class="main">
     <div class="search-section">
         <div class="container">
-            <h2>Vyhledávání "<?php echo get_search_query(); ?>"</h2>
+            <h2>Vyhledávání "<?php echo $search; ?>"</h2>
             <div class="content">
 
                 <?php if ($query->have_posts()) : ?>
