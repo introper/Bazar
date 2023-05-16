@@ -177,12 +177,14 @@ $total_posts = $query->found_posts;
                             <div class="holder">
                                 <?php if (get_the_post_thumbnail_url($post->ID)) : ?>
                                     <div class="img">
-                                        <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo get_the_title($post->ID); ?>" />
+                                        <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo get_the_title($post->ID); ?>" /> 
+                                        <?php $post_date = get_the_date('d. m. Y'); ?>
+                                        <span class="date"><?php echo $post_date ?></span>
                                     </div>
-                                <?php endif; ?>
+                                <?php endif; ?>  
                                 <h3><?php echo get_the_title($post->ID); ?></h3>
                             </div>
-                            <div class="bottom">  
+                            <div class="bottom">
                                 <?php $price = get_field("cena", $post->ID); ?>
                                 <?php if ($price) : ?>
                                     <span><strong><?php echo _e("Cena:", "Bazar-1"); ?></strong> <?php echo $price; ?> Kč</span>
@@ -197,7 +199,7 @@ $total_posts = $query->found_posts;
             <?php if ($total_pages > 1) : ?>
                 <div class="pagination">
                     <a href="<?php echo get_pagenum_link($paged - 1); ?>" class="btn border-blue left"><span><?php echo _e("Předchozí strana", "Bazr-1"); ?>
-                </span><img src="<?php echo home_url(); ?>/templates/data/images/arrow-left-btn.svg" alt="" /></a>
+                        </span><img src="<?php echo home_url(); ?>/templates/data/images/arrow-left-btn.svg" alt="" /></a>
                     <div class="pages">
                         <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
                             <?php if ($i == $paged) : ?>
@@ -208,7 +210,7 @@ $total_posts = $query->found_posts;
                         <?php endfor; ?>
                     </div>
                     <a href="<?php echo get_pagenum_link($paged + 1); ?>" class="btn border-blue"><span><?php echo _e("Další strana", "Bazr-1"); ?>
-                </span><img src="<?php echo home_url(); ?>/templates/data/images/arrow-blue-2.svg" alt="" /></a>
+                        </span><img src="<?php echo home_url(); ?>/templates/data/images/arrow-blue-2.svg" alt="" /></a>
                 </div>
             <?php endif; ?>
         </div>

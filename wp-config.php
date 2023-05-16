@@ -90,14 +90,6 @@ define( 'WP_DEBUG_DISPLAY', false );
 /* That's all, stop editing! Happy publishing. */
 
 // SMTP email settings
-define( 'SMTP_USER', 'nazdarbazar' );  // host username
-define( 'SMTP_PASS', 'maturita2023' );   // Mailtrap SMTP password
-define( 'SMTP_Host', 'smtp.gmail.com' );     // SMTP server address
-define( 'SMTP_FROM', 'brozovic_michal@OAUH.cz' );   // Your Email Address
-define( 'SMTP_NAME', 'Michal Brožovič' );   //  Business From Name
-define( 'SMTP_PORT', '587' );     // Server Port Number
-define( 'SMTP_SECURE', 'tls' );   // Encryption - ssl or tls (recommended)
-define( 'SMTP_AUTH', true );  // Use SMTP authentication (true|false)
 // define( 'SMTP_DEBUG',   0 );  // for debugging purposes only
 
 /** Absolute path to the WordPress directory. */

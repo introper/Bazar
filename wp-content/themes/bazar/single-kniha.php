@@ -62,23 +62,22 @@ $authord = get_the_author_meta('user_email', $author_id);
                     <div class="contact">
                         <span>Kontaktovat majitele:</span>
 
-                        <!-- <a href="mailTo:<?php echo ($authord) ?>" class="email"><?php echo ($authord) ?></a> -->
+                    
                         <?php if (isset($_POST['submit'])) {
-                            // Sanitize form data
+                            
                             $name    = sanitize_text_field($_POST['name']);
                             $email   = sanitize_email($_POST['email']);
                             $message = esc_textarea($_POST['message']);
-
-                            // Set email headers
+                            $to = $authord;
+                          
                             $headers = array(
                                 'Content-Type: text/html; charset=UTF-8',
                                 'From: ' . $title . ' <' . $email . '>',
                             );
 
-                            // Send email using wp_mail function
-                            wp_mail($authord, 'nazad bazar', $message, $headers);
-
-
+                          
+                            wp_mail($to, 'nazad bazar', $message, $headers);
+                            wp_redirect(get_permalink());
                             exit;
                         }
                         ?>

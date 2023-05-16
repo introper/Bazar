@@ -899,6 +899,7 @@ section {
     padding-top: 0px;
     margin-top: 0px;
     justify-items: center;
+    z-index: 4;
 
     &.author {
         .item {
@@ -1061,6 +1062,16 @@ section {
                     transform: translate(-50%, -50%);
                     width: 100%;
                 }
+
+                .date {
+                    background-color: @white;
+                    padding: 10px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    border-bottom-left-radius: 10px;
+                    z-index: 10;
+                }
             }
 
             h3 {
@@ -1143,6 +1154,8 @@ section {
     flex-direction: row;
     flex-wrap: nowrap;
     margin-bottom: 40px;
+    position: relative;
+    z-index: 5;
 
     .full-orange {}
 
